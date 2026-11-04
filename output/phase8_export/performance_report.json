@@ -1,0 +1,786 @@
+{
+  "map": {
+    "size_m": 500.0,
+    "world_partition": {
+      "cell_m": 125.0,
+      "grid": [
+        4,
+        4
+      ],
+      "cells": {
+        "0_0": {
+          "instances": 1537,
+          "unique_meshes": 39,
+          "draw_calls_hism_est": 81,
+          "lod0_tris": 1502404
+        },
+        "0_1": {
+          "instances": 13488,
+          "unique_meshes": 45,
+          "draw_calls_hism_est": 101,
+          "lod0_tris": 1284916
+        },
+        "0_2": {
+          "instances": 13340,
+          "unique_meshes": 46,
+          "draw_calls_hism_est": 102,
+          "lod0_tris": 996774
+        },
+        "0_3": {
+          "instances": 797,
+          "unique_meshes": 29,
+          "draw_calls_hism_est": 58,
+          "lod0_tris": 1340308
+        },
+        "1_0": {
+          "instances": 16874,
+          "unique_meshes": 52,
+          "draw_calls_hism_est": 104,
+          "lod0_tris": 606228
+        },
+        "1_1": {
+          "instances": 24885,
+          "unique_meshes": 47,
+          "draw_calls_hism_est": 101,
+          "lod0_tris": 528060
+        },
+        "1_2": {
+          "instances": 21479,
+          "unique_meshes": 51,
+          "draw_calls_hism_est": 105,
+          "lod0_tris": 635534
+        },
+        "1_3": {
+          "instances": 18484,
+          "unique_meshes": 52,
+          "draw_calls_hism_est": 113,
+          "lod0_tris": 530014
+        },
+        "2_0": {
+          "instances": 19658,
+          "unique_meshes": 52,
+          "draw_calls_hism_est": 113,
+          "lod0_tris": 539676
+        },
+        "2_1": {
+          "instances": 19184,
+          "unique_meshes": 52,
+          "draw_calls_hism_est": 109,
+          "lod0_tris": 1011132
+        },
+        "2_2": {
+          "instances": 20452,
+          "unique_meshes": 58,
+          "draw_calls_hism_est": 118,
+          "lod0_tris": 464782
+        },
+        "2_3": {
+          "instances": 23246,
+          "unique_meshes": 50,
+          "draw_calls_hism_est": 105,
+          "lod0_tris": 619916
+        },
+        "3_0": {
+          "instances": 3393,
+          "unique_meshes": 40,
+          "draw_calls_hism_est": 85,
+          "lod0_tris": 1222184
+        },
+        "3_1": {
+          "instances": 1536,
+          "unique_meshes": 48,
+          "draw_calls_hism_est": 93,
+          "lod0_tris": 1548768
+        },
+        "3_2": {
+          "instances": 8658,
+          "unique_meshes": 43,
+          "draw_calls_hism_est": 96,
+          "lod0_tris": 1311638
+        },
+        "3_3": {
+          "instances": 2111,
+          "unique_meshes": 39,
+          "draw_calls_hism_est": 84,
+          "lod0_tris": 1606818
+        }
+      }
+    },
+    "landscape": {
+      "resolution": 1009,
+      "file_r16": "heightmap_1009.r16",
+      "min_m": -0.1384933252543643,
+      "max_m": 112.048807866449,
+      "ue_scale_cm": {
+        "x": 49.6032,
+        "y": 49.6032,
+        "z": 21.9116
+      },
+      "ue_location_cm": {
+        "x": -25000.0,
+        "y": -25000.0,
+        "z": 5595.52
+      },
+      "components": "8 x 8, 2 x 2 sections per component, 63 quads per section",
+      "weight_layers": [
+        "riverbed",
+        "rock",
+        "dirt",
+        "scree",
+        "moss",
+        "forest_floor",
+        "grass"
+      ],
+      "weight_coverage_pct": {
+        "riverbed": 4.3,
+        "rock": 35.7,
+        "dirt": 4.0,
+        "scree": 2.0,
+        "moss": 0.9,
+        "forest_floor": 9.4,
+        "grass": 43.7
+      }
+    }
+  },
+  "assets": {
+    "count": 76,
+    "lod_levels": {
+      "tree": 4,
+      "rock": 4,
+      "small": 3,
+      "structure": 3
+    },
+    "lod_tris": {
+      "branch_pile_00": [
+        120,
+        60,
+        30
+      ],
+      "branch_pile_01": [
+        120,
+        60,
+        30
+      ],
+      "branch_pile_02": [
+        120,
+        60,
+        30
+      ],
+      "branch_pile_03": [
+        120,
+        60,
+        30
+      ],
+      "stump_00": [
+        28,
+        14,
+        7
+      ],
+      "stump_01": [
+        28,
+        14,
+        7
+      ],
+      "stump_02": [
+        28,
+        14,
+        7
+      ],
+      "stump_03": [
+        28,
+        14,
+        7
+      ],
+      "rock_boulder_00": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_boulder_01": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_boulder_02": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_boulder_03": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_boulder_04": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_cliff_00": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_cliff_01": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_cliff_02": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_cliff_03": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_mountain_00": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_mountain_01": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_mountain_02": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_mountain_03": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_pebble_00": [
+        320,
+        160,
+        80
+      ],
+      "rock_pebble_01": [
+        320,
+        160,
+        80
+      ],
+      "rock_pebble_02": [
+        320,
+        160,
+        80
+      ],
+      "rock_pebble_03": [
+        320,
+        160,
+        80
+      ],
+      "rock_pebble_04": [
+        320,
+        160,
+        80
+      ],
+      "rock_pebble_05": [
+        320,
+        160,
+        80
+      ],
+      "rock_river_00": [
+        1280,
+        448,
+        152,
+        50
+      ],
+      "rock_river_01": [
+        1280,
+        448,
+        152,
+        50
+      ],
+      "rock_river_02": [
+        1280,
+        448,
+        152,
+        50
+      ],
+      "rock_river_03": [
+        1280,
+        448,
+        152,
+        50
+      ],
+      "rock_river_04": [
+        1280,
+        448,
+        152,
+        50
+      ],
+      "rock_weathered_00": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_weathered_01": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_weathered_02": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "rock_weathered_03": [
+        5120,
+        1792,
+        614,
+        204
+      ],
+      "birch_00": [
+        1780,
+        889,
+        391,
+        308
+      ],
+      "birch_01": [
+        1110,
+        555,
+        244,
+        194
+      ],
+      "birch_02": [
+        898,
+        449,
+        197,
+        168
+      ],
+      "bush_00": [
+        266,
+        133,
+        104
+      ],
+      "bush_01": [
+        262,
+        130,
+        70
+      ],
+      "bush_02": [
+        228,
+        114,
+        60
+      ],
+      "dead_00": [
+        516,
+        258,
+        113,
+        58
+      ],
+      "dead_01": [
+        548,
+        273,
+        119,
+        62
+      ],
+      "dead_02": [
+        484,
+        241,
+        106,
+        28
+      ],
+      "fern_00": [
+        52,
+        26,
+        13
+      ],
+      "fern_01": [
+        40,
+        20,
+        10
+      ],
+      "flowers_00": [
+        6,
+        6,
+        6
+      ],
+      "flowers_01": [
+        6,
+        6,
+        6
+      ],
+      "grass_00": [
+        6,
+        6,
+        6
+      ],
+      "grass_01": [
+        6,
+        6,
+        6
+      ],
+      "grass_02": [
+        6,
+        6,
+        6
+      ],
+      "log_00": [
+        344,
+        171,
+        86
+      ],
+      "log_01": [
+        220,
+        109,
+        55
+      ],
+      "log_02": [
+        220,
+        109,
+        54
+      ],
+      "oak_00": [
+        4520,
+        2259,
+        994,
+        550
+      ],
+      "oak_01": [
+        2874,
+        1436,
+        632,
+        258
+      ],
+      "oak_02": [
+        3968,
+        1984,
+        872,
+        444
+      ],
+      "pine_00": [
+        6314,
+        3157,
+        1389,
+        668
+      ],
+      "pine_01": [
+        5218,
+        2609,
+        1147,
+        540
+      ],
+      "pine_02": [
+        7306,
+        3653,
+        1607,
+        750
+      ],
+      "pine_03": [
+        5710,
+        2855,
+        1256,
+        604
+      ],
+      "SM_Bridge": [
+        2472,
+        1236,
+        618
+      ],
+      "SM_Bunker": [
+        948,
+        474,
+        236
+      ],
+      "SM_Chapel_Ruins": [
+        4664,
+        2332,
+        1166
+      ],
+      "SM_Culvert_Bridge_00": [
+        1284,
+        642,
+        320
+      ],
+      "SM_Farmhouse": [
+        4440,
+        2220,
+        1110
+      ],
+      "SM_Hedgehog_00": [
+        36,
+        18,
+        8
+      ],
+      "SM_Hedgehog_01": [
+        36,
+        18,
+        8
+      ],
+      "SM_Hedgehog_02": [
+        36,
+        18,
+        8
+      ],
+      "SM_Hedgehog_03": [
+        36,
+        18,
+        8
+      ],
+      "SM_Hedgehog_04": [
+        36,
+        18,
+        8
+      ],
+      "SM_Lumber_Camp": [
+        6604,
+        3302,
+        1650
+      ],
+      "SM_Outpost_HQ_North": [
+        7816,
+        3908,
+        1954
+      ],
+      "SM_Outpost_HQ_South": [
+        7816,
+        3908,
+        1954
+      ],
+      "SM_Trench": [
+        8940,
+        4470,
+        2234
+      ]
+    },
+    "nanite_candidates": [
+      "SM_Bridge",
+      "SM_Bunker",
+      "SM_Chapel_Ruins",
+      "SM_Culvert_Bridge_00",
+      "SM_Farmhouse",
+      "SM_Hedgehog_00",
+      "SM_Hedgehog_01",
+      "SM_Hedgehog_02",
+      "SM_Hedgehog_03",
+      "SM_Hedgehog_04",
+      "SM_Lumber_Camp",
+      "SM_Outpost_HQ_North",
+      "SM_Outpost_HQ_South",
+      "SM_Trench",
+      "rock_boulder_00",
+      "rock_boulder_01",
+      "rock_boulder_02",
+      "rock_boulder_03",
+      "rock_boulder_04",
+      "rock_cliff_00",
+      "rock_cliff_01",
+      "rock_cliff_02",
+      "rock_cliff_03",
+      "rock_mountain_00",
+      "rock_mountain_01",
+      "rock_mountain_02",
+      "rock_mountain_03",
+      "rock_river_00",
+      "rock_river_01",
+      "rock_river_02",
+      "rock_river_03",
+      "rock_river_04",
+      "rock_weathered_00",
+      "rock_weathered_01",
+      "rock_weathered_02",
+      "rock_weathered_03"
+    ],
+    "cull_distances_m": {
+      "grass": 60.0,
+      "flowers": 60.0,
+      "fern": 90.0,
+      "pebble": 45.0,
+      "bush": 160.0,
+      "branch_pile": 120.0,
+      "stump": 150.0,
+      "log": 200.0
+    }
+  },
+  "instances_total": 209122,
+  "hlod_proxy_tris_per_cell": {
+    "0_0": 1068,
+    "0_1": 1824,
+    "0_2": 1392,
+    "0_3": 696,
+    "1_0": 924,
+    "1_1": 852,
+    "1_2": 972,
+    "1_3": 504,
+    "2_0": 912,
+    "2_1": 648,
+    "2_2": 528,
+    "2_3": 720,
+    "3_0": 1008,
+    "3_1": 1272,
+    "3_2": 2064,
+    "3_3": 1236
+  },
+  "viewpoints": {
+    "Team_A_spawn": {
+      "instances_drawn": 20346,
+      "tris_with_lod_and_culling": 1655028,
+      "tris_without_lod": 15749152,
+      "reduction_pct": 89.5,
+      "draw_calls_hism_est": 347
+    },
+    "Team_B_spawn": {
+      "instances_drawn": 17945,
+      "tris_with_lod_and_culling": 1568950,
+      "tris_without_lod": 15749152,
+      "reduction_pct": 90.0,
+      "draw_calls_hism_est": 348
+    },
+    "Objective_A": {
+      "instances_drawn": 17335,
+      "tris_with_lod_and_culling": 1692796,
+      "tris_without_lod": 15749152,
+      "reduction_pct": 89.3,
+      "draw_calls_hism_est": 369
+    },
+    "Objective_B": {
+      "instances_drawn": 21600,
+      "tris_with_lod_and_culling": 1856083,
+      "tris_without_lod": 15749152,
+      "reduction_pct": 88.2,
+      "draw_calls_hism_est": 326
+    },
+    "Objective_C": {
+      "instances_drawn": 18733,
+      "tris_with_lod_and_culling": 1791407,
+      "tris_without_lod": 15749152,
+      "reduction_pct": 88.6,
+      "draw_calls_hism_est": 369
+    },
+    "Objective_D": {
+      "instances_drawn": 18347,
+      "tris_with_lod_and_culling": 1744738,
+      "tris_without_lod": 15749152,
+      "reduction_pct": 88.9,
+      "draw_calls_hism_est": 371
+    }
+  },
+  "terrain": {
+    "blender_preview_mesh_tris": 2097152,
+    "ue": "Landscape 1009x1009 with LOD by component (not a static mesh)"
+  },
+  "collision": {
+    "terrain_quads_2m": 62500,
+    "structure_boxes": 161,
+    "tree_capsules": 1435,
+    "rock_hulls": 1688,
+    "note": "visual and collision geometry are separate objects / files"
+  },
+  "navigation": {
+    "walkable_cells": 151635,
+    "components": 242,
+    "main_component_cells": 142166,
+    "islands_removed_cells": 9469,
+    "cell_m": 1.0,
+    "agent_radius_m": 0.4,
+    "max_slope_deg": 40.0,
+    "max_wade_depth_m": 0.7,
+    "navmesh_quads_2m": 32396
+  },
+  "textures": [
+    {
+      "file": "T_birch_leaves.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "pow2": true,
+      "bc_compressed_mb_with_mips": 1.33
+    },
+    {
+      "file": "T_bush_leaves.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "pow2": true,
+      "bc_compressed_mb_with_mips": 1.33
+    },
+    {
+      "file": "T_fern.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "pow2": true,
+      "bc_compressed_mb_with_mips": 1.33
+    },
+    {
+      "file": "T_grass.png",
+      "size": [
+        512,
+        512
+      ],
+      "pow2": true,
+      "bc_compressed_mb_with_mips": 0.33
+    },
+    {
+      "file": "T_grass_flowers.png",
+      "size": [
+        512,
+        512
+      ],
+      "pow2": true,
+      "bc_compressed_mb_with_mips": 0.33
+    },
+    {
+      "file": "T_oak_leaves.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "pow2": true,
+      "bc_compressed_mb_with_mips": 1.33
+    },
+    {
+      "file": "T_pine_needles.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "pow2": true,
+      "bc_compressed_mb_with_mips": 1.33
+    }
+  ],
+  "recommendations": [
+    "Rocks and structures: enable Nanite (opaque, >1k tris); keep collision as the separate simplified meshes.",
+    "Trees / bushes: HISM (Foliage) with the exported LOD0-3 + screen sizes; Nanite foliage only on UE 5.5+.",
+    "Grass / flowers / ferns: Landscape Grass Type or PCG from the density maps, cull 60-90 m, no shadows.",
+    "Pebbles: cull at 45 m, no collision, no shadows.",
+    "World Partition: 125 m grid (4 x 4), loading range ~250 m; HLOD layer from HLOD_cell_* proxies.",
+    "Landscape: 1009 heightmap, 8x8 components; Runtime Virtual Texture for the weight-blended material.",
+    "Textures: all power-of-two, BC7 / BC5 normals, streaming enabled; foliage atlases 1024."
+  ],
+  "timings_s": {
+    "landscape": 1.34,
+    "lods_fbx": 7.32,
+    "cells": 4.3,
+    "hlod": 10.86,
+    "perf": 0.38,
+    "total_wall": 24.55
+  }
+}

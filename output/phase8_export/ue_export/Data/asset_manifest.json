@@ -1,0 +1,2577 @@
+{
+  "assets": {
+    "branch_pile_00": {
+      "category": "Debris",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Debris/SM_branch_pile_00_LOD0.fbx",
+          "tris": 120
+        },
+        {
+          "file": "Meshes/Debris/SM_branch_pile_00_LOD1.fbx",
+          "tris": 60
+        },
+        {
+          "file": "Meshes/Debris/SM_branch_pile_00_LOD2.fbx",
+          "tris": 30
+        }
+      ],
+      "materials": [
+        "M_Bark_pine"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 120.0
+    },
+    "branch_pile_01": {
+      "category": "Debris",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Debris/SM_branch_pile_01_LOD0.fbx",
+          "tris": 120
+        },
+        {
+          "file": "Meshes/Debris/SM_branch_pile_01_LOD1.fbx",
+          "tris": 60
+        },
+        {
+          "file": "Meshes/Debris/SM_branch_pile_01_LOD2.fbx",
+          "tris": 30
+        }
+      ],
+      "materials": [
+        "M_Bark_pine"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 120.0
+    },
+    "branch_pile_02": {
+      "category": "Debris",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Debris/SM_branch_pile_02_LOD0.fbx",
+          "tris": 120
+        },
+        {
+          "file": "Meshes/Debris/SM_branch_pile_02_LOD1.fbx",
+          "tris": 60
+        },
+        {
+          "file": "Meshes/Debris/SM_branch_pile_02_LOD2.fbx",
+          "tris": 30
+        }
+      ],
+      "materials": [
+        "M_Bark_pine"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 120.0
+    },
+    "branch_pile_03": {
+      "category": "Debris",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Debris/SM_branch_pile_03_LOD0.fbx",
+          "tris": 120
+        },
+        {
+          "file": "Meshes/Debris/SM_branch_pile_03_LOD1.fbx",
+          "tris": 60
+        },
+        {
+          "file": "Meshes/Debris/SM_branch_pile_03_LOD2.fbx",
+          "tris": 30
+        }
+      ],
+      "materials": [
+        "M_Bark_pine"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 120.0
+    },
+    "stump_00": {
+      "category": "Debris",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Debris/SM_stump_00_LOD0.fbx",
+          "tris": 28
+        },
+        {
+          "file": "Meshes/Debris/SM_stump_00_LOD1.fbx",
+          "tris": 14
+        },
+        {
+          "file": "Meshes/Debris/SM_stump_00_LOD2.fbx",
+          "tris": 7
+        }
+      ],
+      "materials": [
+        "M_Bark_pine",
+        "M_Wood_Cut"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 150.0
+    },
+    "stump_01": {
+      "category": "Debris",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Debris/SM_stump_01_LOD0.fbx",
+          "tris": 28
+        },
+        {
+          "file": "Meshes/Debris/SM_stump_01_LOD1.fbx",
+          "tris": 14
+        },
+        {
+          "file": "Meshes/Debris/SM_stump_01_LOD2.fbx",
+          "tris": 7
+        }
+      ],
+      "materials": [
+        "M_Bark_pine",
+        "M_Wood_Cut"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 150.0
+    },
+    "stump_02": {
+      "category": "Debris",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Debris/SM_stump_02_LOD0.fbx",
+          "tris": 28
+        },
+        {
+          "file": "Meshes/Debris/SM_stump_02_LOD1.fbx",
+          "tris": 14
+        },
+        {
+          "file": "Meshes/Debris/SM_stump_02_LOD2.fbx",
+          "tris": 7
+        }
+      ],
+      "materials": [
+        "M_Bark_pine",
+        "M_Wood_Cut"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 150.0
+    },
+    "stump_03": {
+      "category": "Debris",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Debris/SM_stump_03_LOD0.fbx",
+          "tris": 28
+        },
+        {
+          "file": "Meshes/Debris/SM_stump_03_LOD1.fbx",
+          "tris": 14
+        },
+        {
+          "file": "Meshes/Debris/SM_stump_03_LOD2.fbx",
+          "tris": 7
+        }
+      ],
+      "materials": [
+        "M_Bark_pine",
+        "M_Wood_Cut"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 150.0
+    },
+    "rock_boulder_00": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_00_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_00_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_00_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_00_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_boulder_01": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_01_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_01_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_01_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_01_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_boulder_02": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_02_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_02_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_02_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_02_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_boulder_03": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_03_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_03_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_03_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_03_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_boulder_04": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_04_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_04_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_04_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_boulder_04_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_cliff_00": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_00_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_00_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_00_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_00_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock_Strata"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_cliff_01": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_01_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_01_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_01_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_01_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock_Strata"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_cliff_02": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_02_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_02_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_02_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_02_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock_Strata"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_cliff_03": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_03_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_03_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_03_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_cliff_03_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock_Strata"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_mountain_00": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_00_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_00_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_00_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_00_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_mountain_01": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_01_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_01_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_01_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_01_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_mountain_02": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_02_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_02_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_02_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_02_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_mountain_03": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_03_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_03_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_03_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_mountain_03_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_pebble_00": {
+      "category": "Rocks",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_00_LOD0.fbx",
+          "tris": 320
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_00_LOD1.fbx",
+          "tris": 160
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_00_LOD2.fbx",
+          "tris": 80
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 45.0
+    },
+    "rock_pebble_01": {
+      "category": "Rocks",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_01_LOD0.fbx",
+          "tris": 320
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_01_LOD1.fbx",
+          "tris": 160
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_01_LOD2.fbx",
+          "tris": 80
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 45.0
+    },
+    "rock_pebble_02": {
+      "category": "Rocks",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_02_LOD0.fbx",
+          "tris": 320
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_02_LOD1.fbx",
+          "tris": 160
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_02_LOD2.fbx",
+          "tris": 80
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 45.0
+    },
+    "rock_pebble_03": {
+      "category": "Rocks",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_03_LOD0.fbx",
+          "tris": 320
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_03_LOD1.fbx",
+          "tris": 160
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_03_LOD2.fbx",
+          "tris": 80
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 45.0
+    },
+    "rock_pebble_04": {
+      "category": "Rocks",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_04_LOD0.fbx",
+          "tris": 320
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_04_LOD1.fbx",
+          "tris": 160
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_04_LOD2.fbx",
+          "tris": 80
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 45.0
+    },
+    "rock_pebble_05": {
+      "category": "Rocks",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_05_LOD0.fbx",
+          "tris": 320
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_05_LOD1.fbx",
+          "tris": 160
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_pebble_05_LOD2.fbx",
+          "tris": 80
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 45.0
+    },
+    "rock_river_00": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_river_00_LOD0.fbx",
+          "tris": 1280
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_00_LOD1.fbx",
+          "tris": 448
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_00_LOD2.fbx",
+          "tris": 152
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_00_LOD3.fbx",
+          "tris": 50
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_river_01": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_river_01_LOD0.fbx",
+          "tris": 1280
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_01_LOD1.fbx",
+          "tris": 448
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_01_LOD2.fbx",
+          "tris": 152
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_01_LOD3.fbx",
+          "tris": 50
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_river_02": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_river_02_LOD0.fbx",
+          "tris": 1280
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_02_LOD1.fbx",
+          "tris": 448
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_02_LOD2.fbx",
+          "tris": 152
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_02_LOD3.fbx",
+          "tris": 50
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_river_03": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_river_03_LOD0.fbx",
+          "tris": 1280
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_03_LOD1.fbx",
+          "tris": 448
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_03_LOD2.fbx",
+          "tris": 152
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_03_LOD3.fbx",
+          "tris": 50
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_river_04": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_river_04_LOD0.fbx",
+          "tris": 1280
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_04_LOD1.fbx",
+          "tris": 448
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_04_LOD2.fbx",
+          "tris": 152
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_river_04_LOD3.fbx",
+          "tris": 50
+        }
+      ],
+      "materials": [
+        "M_Rock_River"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_weathered_00": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_00_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_00_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_00_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_00_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock_Strata"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_weathered_01": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_01_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_01_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_01_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_01_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock_Strata"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_weathered_02": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_02_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_02_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_02_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_02_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock_Strata"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "rock_weathered_03": {
+      "category": "Rocks",
+      "kind": "rock",
+      "lods": [
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_03_LOD0.fbx",
+          "tris": 5120
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_03_LOD1.fbx",
+          "tris": 1792
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_03_LOD2.fbx",
+          "tris": 614
+        },
+        {
+          "file": "Meshes/Rocks/SM_rock_weathered_03_LOD3.fbx",
+          "tris": 204
+        }
+      ],
+      "materials": [
+        "M_Rock_Strata"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.4,
+        0.15,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "birch_00": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_birch_00_LOD0.fbx",
+          "tris": 1780
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_00_LOD1.fbx",
+          "tris": 889
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_00_LOD2.fbx",
+          "tris": 391
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_00_LOD3.fbx",
+          "tris": 308
+        }
+      ],
+      "materials": [
+        "M_Bark_birch",
+        "M_Foliage_birch_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "birch_01": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_birch_01_LOD0.fbx",
+          "tris": 1110
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_01_LOD1.fbx",
+          "tris": 555
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_01_LOD2.fbx",
+          "tris": 244
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_01_LOD3.fbx",
+          "tris": 194
+        }
+      ],
+      "materials": [
+        "M_Bark_birch",
+        "M_Foliage_birch_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "birch_02": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_birch_02_LOD0.fbx",
+          "tris": 898
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_02_LOD1.fbx",
+          "tris": 449
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_02_LOD2.fbx",
+          "tris": 197
+        },
+        {
+          "file": "Meshes/Vegetation/SM_birch_02_LOD3.fbx",
+          "tris": 168
+        }
+      ],
+      "materials": [
+        "M_Bark_birch",
+        "M_Foliage_birch_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "bush_00": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_bush_00_LOD0.fbx",
+          "tris": 266
+        },
+        {
+          "file": "Meshes/Vegetation/SM_bush_00_LOD1.fbx",
+          "tris": 133
+        },
+        {
+          "file": "Meshes/Vegetation/SM_bush_00_LOD2.fbx",
+          "tris": 104
+        }
+      ],
+      "materials": [
+        "M_Bark_oak",
+        "M_Foliage_bush_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 160.0
+    },
+    "bush_01": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_bush_01_LOD0.fbx",
+          "tris": 262
+        },
+        {
+          "file": "Meshes/Vegetation/SM_bush_01_LOD1.fbx",
+          "tris": 130
+        },
+        {
+          "file": "Meshes/Vegetation/SM_bush_01_LOD2.fbx",
+          "tris": 70
+        }
+      ],
+      "materials": [
+        "M_Bark_oak",
+        "M_Foliage_bush_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 160.0
+    },
+    "bush_02": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_bush_02_LOD0.fbx",
+          "tris": 228
+        },
+        {
+          "file": "Meshes/Vegetation/SM_bush_02_LOD1.fbx",
+          "tris": 114
+        },
+        {
+          "file": "Meshes/Vegetation/SM_bush_02_LOD2.fbx",
+          "tris": 60
+        }
+      ],
+      "materials": [
+        "M_Bark_oak",
+        "M_Foliage_bush_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 160.0
+    },
+    "dead_00": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_dead_00_LOD0.fbx",
+          "tris": 516
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_00_LOD1.fbx",
+          "tris": 258
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_00_LOD2.fbx",
+          "tris": 113
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_00_LOD3.fbx",
+          "tris": 58
+        }
+      ],
+      "materials": [
+        "M_Bark_dead",
+        "M_Bark_dead",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "dead_01": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_dead_01_LOD0.fbx",
+          "tris": 548
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_01_LOD1.fbx",
+          "tris": 273
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_01_LOD2.fbx",
+          "tris": 119
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_01_LOD3.fbx",
+          "tris": 62
+        }
+      ],
+      "materials": [
+        "M_Bark_dead",
+        "M_Bark_dead",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "dead_02": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_dead_02_LOD0.fbx",
+          "tris": 484
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_02_LOD1.fbx",
+          "tris": 241
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_02_LOD2.fbx",
+          "tris": 106
+        },
+        {
+          "file": "Meshes/Vegetation/SM_dead_02_LOD3.fbx",
+          "tris": 28
+        }
+      ],
+      "materials": [
+        "M_Bark_dead",
+        "M_Bark_dead",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "fern_00": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_fern_00_LOD0.fbx",
+          "tris": 52
+        },
+        {
+          "file": "Meshes/Vegetation/SM_fern_00_LOD1.fbx",
+          "tris": 26
+        },
+        {
+          "file": "Meshes/Vegetation/SM_fern_00_LOD2.fbx",
+          "tris": 13
+        }
+      ],
+      "materials": [
+        "M_Foliage_fern",
+        "M_Foliage_fern",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 90.0
+    },
+    "fern_01": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_fern_01_LOD0.fbx",
+          "tris": 40
+        },
+        {
+          "file": "Meshes/Vegetation/SM_fern_01_LOD1.fbx",
+          "tris": 20
+        },
+        {
+          "file": "Meshes/Vegetation/SM_fern_01_LOD2.fbx",
+          "tris": 10
+        }
+      ],
+      "materials": [
+        "M_Foliage_fern",
+        "M_Foliage_fern",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 90.0
+    },
+    "flowers_00": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_flowers_00_LOD0.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_flowers_00_LOD1.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_flowers_00_LOD2.fbx",
+          "tris": 6
+        }
+      ],
+      "materials": [
+        "M_Foliage_grass_flowers",
+        "M_Foliage_grass_flowers",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 60.0
+    },
+    "flowers_01": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_flowers_01_LOD0.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_flowers_01_LOD1.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_flowers_01_LOD2.fbx",
+          "tris": 6
+        }
+      ],
+      "materials": [
+        "M_Foliage_grass_flowers",
+        "M_Foliage_grass_flowers",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 60.0
+    },
+    "grass_00": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_grass_00_LOD0.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_grass_00_LOD1.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_grass_00_LOD2.fbx",
+          "tris": 6
+        }
+      ],
+      "materials": [
+        "M_Foliage_grass",
+        "M_Foliage_grass",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 60.0
+    },
+    "grass_01": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_grass_01_LOD0.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_grass_01_LOD1.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_grass_01_LOD2.fbx",
+          "tris": 6
+        }
+      ],
+      "materials": [
+        "M_Foliage_grass",
+        "M_Foliage_grass",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 60.0
+    },
+    "grass_02": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_grass_02_LOD0.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_grass_02_LOD1.fbx",
+          "tris": 6
+        },
+        {
+          "file": "Meshes/Vegetation/SM_grass_02_LOD2.fbx",
+          "tris": 6
+        }
+      ],
+      "materials": [
+        "M_Foliage_grass",
+        "M_Foliage_grass",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 60.0
+    },
+    "log_00": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_log_00_LOD0.fbx",
+          "tris": 344
+        },
+        {
+          "file": "Meshes/Vegetation/SM_log_00_LOD1.fbx",
+          "tris": 171
+        },
+        {
+          "file": "Meshes/Vegetation/SM_log_00_LOD2.fbx",
+          "tris": 86
+        }
+      ],
+      "materials": [
+        "M_Bark_log_moss",
+        "M_Bark_log_moss",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 200.0
+    },
+    "log_01": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_log_01_LOD0.fbx",
+          "tris": 220
+        },
+        {
+          "file": "Meshes/Vegetation/SM_log_01_LOD1.fbx",
+          "tris": 109
+        },
+        {
+          "file": "Meshes/Vegetation/SM_log_01_LOD2.fbx",
+          "tris": 55
+        }
+      ],
+      "materials": [
+        "M_Bark_log_moss",
+        "M_Bark_log_moss",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 200.0
+    },
+    "log_02": {
+      "category": "Vegetation",
+      "kind": "small",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_log_02_LOD0.fbx",
+          "tris": 220
+        },
+        {
+          "file": "Meshes/Vegetation/SM_log_02_LOD1.fbx",
+          "tris": 109
+        },
+        {
+          "file": "Meshes/Vegetation/SM_log_02_LOD2.fbx",
+          "tris": 54
+        }
+      ],
+      "materials": [
+        "M_Bark_log_moss",
+        "M_Bark_log_moss",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.3,
+        0.1
+      ],
+      "cull_distance_m": 200.0
+    },
+    "oak_00": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_oak_00_LOD0.fbx",
+          "tris": 4520
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_00_LOD1.fbx",
+          "tris": 2259
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_00_LOD2.fbx",
+          "tris": 994
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_00_LOD3.fbx",
+          "tris": 550
+        }
+      ],
+      "materials": [
+        "M_Bark_oak",
+        "M_Foliage_oak_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "oak_01": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_oak_01_LOD0.fbx",
+          "tris": 2874
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_01_LOD1.fbx",
+          "tris": 1436
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_01_LOD2.fbx",
+          "tris": 632
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_01_LOD3.fbx",
+          "tris": 258
+        }
+      ],
+      "materials": [
+        "M_Bark_oak",
+        "M_Foliage_oak_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "oak_02": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_oak_02_LOD0.fbx",
+          "tris": 3968
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_02_LOD1.fbx",
+          "tris": 1984
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_02_LOD2.fbx",
+          "tris": 872
+        },
+        {
+          "file": "Meshes/Vegetation/SM_oak_02_LOD3.fbx",
+          "tris": 444
+        }
+      ],
+      "materials": [
+        "M_Bark_oak",
+        "M_Foliage_oak_leaves",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "pine_00": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_pine_00_LOD0.fbx",
+          "tris": 6314
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_00_LOD1.fbx",
+          "tris": 3157
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_00_LOD2.fbx",
+          "tris": 1389
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_00_LOD3.fbx",
+          "tris": 668
+        }
+      ],
+      "materials": [
+        "M_Bark_pine",
+        "M_Foliage_pine_needles",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "pine_01": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_pine_01_LOD0.fbx",
+          "tris": 5218
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_01_LOD1.fbx",
+          "tris": 2609
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_01_LOD2.fbx",
+          "tris": 1147
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_01_LOD3.fbx",
+          "tris": 540
+        }
+      ],
+      "materials": [
+        "M_Bark_pine",
+        "M_Foliage_pine_needles",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "pine_02": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_pine_02_LOD0.fbx",
+          "tris": 7306
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_02_LOD1.fbx",
+          "tris": 3653
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_02_LOD2.fbx",
+          "tris": 1607
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_02_LOD3.fbx",
+          "tris": 750
+        }
+      ],
+      "materials": [
+        "M_Bark_pine",
+        "M_Foliage_pine_needles",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "pine_03": {
+      "category": "Vegetation",
+      "kind": "tree",
+      "lods": [
+        {
+          "file": "Meshes/Vegetation/SM_pine_03_LOD0.fbx",
+          "tris": 5710
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_03_LOD1.fbx",
+          "tris": 2855
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_03_LOD2.fbx",
+          "tris": 1256
+        },
+        {
+          "file": "Meshes/Vegetation/SM_pine_03_LOD3.fbx",
+          "tris": 604
+        }
+      ],
+      "materials": [
+        "M_Bark_pine",
+        "M_Foliage_pine_needles",
+        "M_Bark_dead"
+      ],
+      "nanite_candidate": false,
+      "masked_foliage": true,
+      "lod_screen_size": [
+        1.0,
+        0.45,
+        0.18,
+        0.05
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Bridge": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Bridge_LOD0.fbx",
+          "tris": 2472
+        },
+        {
+          "file": "Meshes/Structures/SM_Bridge_LOD1.fbx",
+          "tris": 1236
+        },
+        {
+          "file": "Meshes/Structures/SM_Bridge_LOD2.fbx",
+          "tris": 618
+        }
+      ],
+      "materials": [
+        "M_Wood_Planks",
+        "M_Log_Peeled",
+        "M_Wood_Dark",
+        "M_Stone_Abutment"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Bunker": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Bunker_LOD0.fbx",
+          "tris": 948
+        },
+        {
+          "file": "Meshes/Structures/SM_Bunker_LOD1.fbx",
+          "tris": 474
+        },
+        {
+          "file": "Meshes/Structures/SM_Bunker_LOD2.fbx",
+          "tris": 236
+        }
+      ],
+      "materials": [
+        "M_Concrete",
+        "M_Sandbag"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Chapel_Ruins": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Chapel_Ruins_LOD0.fbx",
+          "tris": 4664
+        },
+        {
+          "file": "Meshes/Structures/SM_Chapel_Ruins_LOD1.fbx",
+          "tris": 2332
+        },
+        {
+          "file": "Meshes/Structures/SM_Chapel_Ruins_LOD2.fbx",
+          "tris": 1166
+        }
+      ],
+      "materials": [
+        "M_Stone_Ruin"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Culvert_Bridge_00": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Culvert_Bridge_00_LOD0.fbx",
+          "tris": 1284
+        },
+        {
+          "file": "Meshes/Structures/SM_Culvert_Bridge_00_LOD1.fbx",
+          "tris": 642
+        },
+        {
+          "file": "Meshes/Structures/SM_Culvert_Bridge_00_LOD2.fbx",
+          "tris": 320
+        }
+      ],
+      "materials": [
+        "M_Wood_Planks",
+        "M_Log_Peeled",
+        "M_Wood_Dark",
+        "M_Stone_Abutment"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Farmhouse": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Farmhouse_LOD0.fbx",
+          "tris": 4440
+        },
+        {
+          "file": "Meshes/Structures/SM_Farmhouse_LOD1.fbx",
+          "tris": 2220
+        },
+        {
+          "file": "Meshes/Structures/SM_Farmhouse_LOD2.fbx",
+          "tris": 1110
+        }
+      ],
+      "materials": [
+        "M_Stone_Farmhouse",
+        "M_Plaster_Old",
+        "M_Wood_Old",
+        "M_Roof_Slate",
+        "M_Metal_Corrugated_Rust"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Hedgehog_00": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_00_LOD0.fbx",
+          "tris": 36
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_00_LOD1.fbx",
+          "tris": 18
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_00_LOD2.fbx",
+          "tris": 8
+        }
+      ],
+      "materials": [
+        "M_Metal_Corrugated_Rust"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Hedgehog_01": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_01_LOD0.fbx",
+          "tris": 36
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_01_LOD1.fbx",
+          "tris": 18
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_01_LOD2.fbx",
+          "tris": 8
+        }
+      ],
+      "materials": [
+        "M_Metal_Corrugated_Rust"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Hedgehog_02": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_02_LOD0.fbx",
+          "tris": 36
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_02_LOD1.fbx",
+          "tris": 18
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_02_LOD2.fbx",
+          "tris": 8
+        }
+      ],
+      "materials": [
+        "M_Metal_Corrugated_Rust"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Hedgehog_03": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_03_LOD0.fbx",
+          "tris": 36
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_03_LOD1.fbx",
+          "tris": 18
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_03_LOD2.fbx",
+          "tris": 8
+        }
+      ],
+      "materials": [
+        "M_Metal_Corrugated_Rust"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Hedgehog_04": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_04_LOD0.fbx",
+          "tris": 36
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_04_LOD1.fbx",
+          "tris": 18
+        },
+        {
+          "file": "Meshes/Structures/SM_Hedgehog_04_LOD2.fbx",
+          "tris": 8
+        }
+      ],
+      "materials": [
+        "M_Metal_Corrugated_Rust"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Lumber_Camp": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Lumber_Camp_LOD0.fbx",
+          "tris": 6604
+        },
+        {
+          "file": "Meshes/Structures/SM_Lumber_Camp_LOD1.fbx",
+          "tris": 3302
+        },
+        {
+          "file": "Meshes/Structures/SM_Lumber_Camp_LOD2.fbx",
+          "tris": 1650
+        }
+      ],
+      "materials": [
+        "M_Log_Peeled",
+        "M_Wood_Old",
+        "M_Metal_Corrugated_Rust",
+        "M_Wood_Planks",
+        "M_Metal_Olive"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Outpost_HQ_North": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Outpost_HQ_North_LOD0.fbx",
+          "tris": 7816
+        },
+        {
+          "file": "Meshes/Structures/SM_Outpost_HQ_North_LOD1.fbx",
+          "tris": 3908
+        },
+        {
+          "file": "Meshes/Structures/SM_Outpost_HQ_North_LOD2.fbx",
+          "tris": 1954
+        }
+      ],
+      "materials": [
+        "M_HESCO",
+        "M_Sandbag",
+        "M_Wood_Dark",
+        "M_Wood_Planks",
+        "M_Metal_Corrugated_Rust",
+        "M_Canvas_Olive",
+        "M_Wood_Crate",
+        "M_Metal_Olive"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Outpost_HQ_South": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Outpost_HQ_South_LOD0.fbx",
+          "tris": 7816
+        },
+        {
+          "file": "Meshes/Structures/SM_Outpost_HQ_South_LOD1.fbx",
+          "tris": 3908
+        },
+        {
+          "file": "Meshes/Structures/SM_Outpost_HQ_South_LOD2.fbx",
+          "tris": 1954
+        }
+      ],
+      "materials": [
+        "M_HESCO",
+        "M_Sandbag",
+        "M_Wood_Dark",
+        "M_Wood_Planks",
+        "M_Metal_Corrugated_Rust",
+        "M_Canvas_Olive",
+        "M_Wood_Crate",
+        "M_Metal_Olive"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    },
+    "SM_Trench": {
+      "category": "Structures",
+      "kind": "structure",
+      "lods": [
+        {
+          "file": "Meshes/Structures/SM_Trench_LOD0.fbx",
+          "tris": 8940
+        },
+        {
+          "file": "Meshes/Structures/SM_Trench_LOD1.fbx",
+          "tris": 4470
+        },
+        {
+          "file": "Meshes/Structures/SM_Trench_LOD2.fbx",
+          "tris": 2234
+        }
+      ],
+      "materials": [
+        "M_Wood_Dark",
+        "M_Wood_Old",
+        "M_Sandbag",
+        "M_Metal_Corrugated_Rust"
+      ],
+      "nanite_candidate": true,
+      "masked_foliage": false,
+      "lod_screen_size": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "cull_distance_m": null
+    }
+  },
+  "groups": {
+    "branch_pile": [
+      "branch_pile_00",
+      "branch_pile_01",
+      "branch_pile_02",
+      "branch_pile_03"
+    ],
+    "stump": [
+      "stump_00",
+      "stump_01",
+      "stump_02",
+      "stump_03"
+    ],
+    "boulder": [
+      "rock_boulder_00",
+      "rock_boulder_01",
+      "rock_boulder_02",
+      "rock_boulder_03",
+      "rock_boulder_04"
+    ],
+    "moss": [
+      "rock_boulder_00",
+      "rock_boulder_01",
+      "rock_boulder_02",
+      "rock_boulder_03",
+      "rock_boulder_04"
+    ],
+    "cliff": [
+      "rock_cliff_00",
+      "rock_cliff_01",
+      "rock_cliff_02",
+      "rock_cliff_03"
+    ],
+    "mountain": [
+      "rock_mountain_00",
+      "rock_mountain_01",
+      "rock_mountain_02",
+      "rock_mountain_03"
+    ],
+    "pebble": [
+      "rock_pebble_00",
+      "rock_pebble_01",
+      "rock_pebble_02",
+      "rock_pebble_03",
+      "rock_pebble_04",
+      "rock_pebble_05"
+    ],
+    "river": [
+      "rock_river_00",
+      "rock_river_01",
+      "rock_river_02",
+      "rock_river_03",
+      "rock_river_04"
+    ],
+    "weathered": [
+      "rock_weathered_00",
+      "rock_weathered_01",
+      "rock_weathered_02",
+      "rock_weathered_03"
+    ],
+    "birch": [
+      "birch_00",
+      "birch_01",
+      "birch_02"
+    ],
+    "bush": [
+      "bush_00",
+      "bush_01",
+      "bush_02"
+    ],
+    "dead": [
+      "dead_00",
+      "dead_01",
+      "dead_02"
+    ],
+    "fern": [
+      "fern_00",
+      "fern_01"
+    ],
+    "flowers": [
+      "flowers_00",
+      "flowers_01"
+    ],
+    "grass": [
+      "grass_00",
+      "grass_01",
+      "grass_02"
+    ],
+    "log": [
+      "log_00",
+      "log_01",
+      "log_02"
+    ],
+    "oak": [
+      "oak_00",
+      "oak_01",
+      "oak_02"
+    ],
+    "pine": [
+      "pine_00",
+      "pine_01",
+      "pine_02",
+      "pine_03"
+    ]
+  },
+  "world_partition_cell_m": 125.0
+}

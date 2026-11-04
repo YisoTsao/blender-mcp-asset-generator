@@ -1,0 +1,21 @@
+{
+  "fingerprint": "4f1df21a9e4c868f",
+  "built_at": "2026-11-03 23:40:51",
+  "seconds": 10.4,
+  "args": [
+    "--seed",
+    "42",
+    "--size",
+    "500.0",
+    "--res",
+    "513",
+    "--height",
+    "110.0",
+    "--ranges",
+    "4",
+    "--detail",
+    "1.0",
+    "--out",
+    "output/phase1_terrain"
+  ]
+}

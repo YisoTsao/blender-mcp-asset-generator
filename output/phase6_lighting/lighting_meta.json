@@ -1,0 +1,104 @@
+{
+  "presets": [
+    "morning",
+    "noon",
+    "sunset",
+    "night",
+    "foggy",
+    "rainy"
+  ],
+  "wetness_hooked_materials": [
+    "M_Concrete",
+    "M_HESCO",
+    "M_Log_Peeled",
+    "M_Road_Dirt",
+    "M_Rock",
+    "M_Rock_River",
+    "M_Rock_Strata",
+    "M_Sandbag",
+    "M_Stone_Abutment",
+    "M_Stone_Farmhouse",
+    "M_Stone_Ruin",
+    "M_Terrain_Preview",
+    "M_Trail_Dirt",
+    "M_Wood_Crate",
+    "M_Wood_Cut",
+    "M_Wood_Dark",
+    "M_Wood_Old",
+    "M_Wood_Planks"
+  ],
+  "renders": [
+    {
+      "preset": "morning",
+      "shot": "valley",
+      "seconds": 43.2
+    },
+    {
+      "preset": "morning",
+      "shot": "bridge",
+      "seconds": 60.9
+    },
+    {
+      "preset": "noon",
+      "shot": "valley",
+      "seconds": 52.2
+    },
+    {
+      "preset": "noon",
+      "shot": "bridge",
+      "seconds": 46.5
+    },
+    {
+      "preset": "sunset",
+      "shot": "valley",
+      "seconds": 45.0
+    },
+    {
+      "preset": "sunset",
+      "shot": "bridge",
+      "seconds": 82.1
+    },
+    {
+      "preset": "night",
+      "shot": "valley",
+      "seconds": 47.9
+    },
+    {
+      "preset": "night",
+      "shot": "bridge",
+      "seconds": 103.7
+    },
+    {
+      "preset": "foggy",
+      "shot": "valley",
+      "seconds": 45.2
+    },
+    {
+      "preset": "foggy",
+      "shot": "bridge",
+      "seconds": 61.9
+    },
+    {
+      "preset": "rainy",
+      "shot": "valley",
+      "seconds": 133.3
+    },
+    {
+      "preset": "rainy",
+      "shot": "bridge",
+      "seconds": 141.8
+    }
+  ],
+  "eevee": {
+    "use_raytracing": true,
+    "use_fast_gi": true,
+    "volumetric_end": 1400.0,
+    "volumetric_samples": 64,
+    "use_volumetric_shadows": true
+  },
+  "timings_s": {
+    "rig": 0.065,
+    "render": 863.835,
+    "total_wall": 864.865
+  }
+}

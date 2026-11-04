@@ -1,0 +1,339 @@
+{
+  "config": {
+    "seed": 42,
+    "density": 1.0,
+    "cliff_per_ha": 180.0,
+    "mountain_per_ha": 90.0,
+    "talus_per_ha": 600.0,
+    "erratic_per_ha": 8.0,
+    "weathered_per_ha": 40.0,
+    "moss_per_ha": 70.0,
+    "river_bed_per_m2": 0.08,
+    "bank_per_m2": 0.05,
+    "stream_per_m2": 0.22,
+    "pebble_per_m2": 0.9,
+    "max_free_rock_slope_deg": 30.0
+  },
+  "stats": {
+    "instances": {
+      "cliff": 1047,
+      "mountain": 49,
+      "boulder": 240,
+      "weathered": 22,
+      "moss": 25,
+      "river": 333,
+      "pebble": 1081
+    },
+    "instances_total": 2797,
+    "asset_variants": {
+      "boulder": 5,
+      "cliff": 4,
+      "mountain": 4,
+      "river": 5,
+      "pebble": 6,
+      "weathered": 4
+    },
+    "asset_tris_mean": {
+      "boulder": 5120,
+      "cliff": 5120,
+      "mountain": 5120,
+      "river": 1280,
+      "pebble": 320,
+      "weathered": 5120
+    },
+    "rendered_triangles_approx": 7853120,
+    "vegetation_removed_inside_rocks": {
+      "bush": 28,
+      "dead": 3,
+      "fern": 14,
+      "flowers": 47,
+      "grass": 1573,
+      "pine": 44
+    },
+    "scree_area_pct": 2.5,
+    "checks": {
+      "boulder_max_slope_deg": 30.8,
+      "moss_max_slope_deg": 25.7,
+      "weathered_max_slope_deg": 28.2,
+      "rocks_outside_map": 0,
+      "rock_bases_above_ground": 0,
+      "trunks_inside_rocks": 0
+    }
+  },
+  "assets": {
+    "boulder": [
+      {
+        "name": "rock_boulder_00",
+        "tris": 5120,
+        "dims_m": [
+          2.55,
+          1.23,
+          1.33
+        ]
+      },
+      {
+        "name": "rock_boulder_01",
+        "tris": 5120,
+        "dims_m": [
+          2.21,
+          2.16,
+          1.39
+        ]
+      },
+      {
+        "name": "rock_boulder_02",
+        "tris": 5120,
+        "dims_m": [
+          2.59,
+          1.53,
+          1.08
+        ]
+      },
+      {
+        "name": "rock_boulder_03",
+        "tris": 5120,
+        "dims_m": [
+          2.12,
+          1.51,
+          1.35
+        ]
+      },
+      {
+        "name": "rock_boulder_04",
+        "tris": 5120,
+        "dims_m": [
+          2.46,
+          2.12,
+          1.14
+        ]
+      }
+    ],
+    "cliff": [
+      {
+        "name": "rock_cliff_00",
+        "tris": 5120,
+        "dims_m": [
+          9.08,
+          4.93,
+          2.66
+        ]
+      },
+      {
+        "name": "rock_cliff_01",
+        "tris": 5120,
+        "dims_m": [
+          9.51,
+          5.34,
+          3.01
+        ]
+      },
+      {
+        "name": "rock_cliff_02",
+        "tris": 5120,
+        "dims_m": [
+          9.11,
+          4.91,
+          2.18
+        ]
+      },
+      {
+        "name": "rock_cliff_03",
+        "tris": 5120,
+        "dims_m": [
+          8.8,
+          5.14,
+          2.74
+        ]
+      }
+    ],
+    "mountain": [
+      {
+        "name": "rock_mountain_00",
+        "tris": 5120,
+        "dims_m": [
+          2.64,
+          1.32,
+          1.8
+        ]
+      },
+      {
+        "name": "rock_mountain_01",
+        "tris": 5120,
+        "dims_m": [
+          3.0,
+          2.13,
+          2.16
+        ]
+      },
+      {
+        "name": "rock_mountain_02",
+        "tris": 5120,
+        "dims_m": [
+          2.07,
+          2.45,
+          1.83
+        ]
+      },
+      {
+        "name": "rock_mountain_03",
+        "tris": 5120,
+        "dims_m": [
+          2.83,
+          1.69,
+          2.47
+        ]
+      }
+    ],
+    "river": [
+      {
+        "name": "rock_river_00",
+        "tris": 1280,
+        "dims_m": [
+          0.92,
+          0.77,
+          0.42
+        ]
+      },
+      {
+        "name": "rock_river_01",
+        "tris": 1280,
+        "dims_m": [
+          0.82,
+          0.77,
+          0.46
+        ]
+      },
+      {
+        "name": "rock_river_02",
+        "tris": 1280,
+        "dims_m": [
+          1.0,
+          0.66,
+          0.5
+        ]
+      },
+      {
+        "name": "rock_river_03",
+        "tris": 1280,
+        "dims_m": [
+          0.89,
+          0.74,
+          0.4
+        ]
+      },
+      {
+        "name": "rock_river_04",
+        "tris": 1280,
+        "dims_m": [
+          0.85,
+          0.62,
+          0.48
+        ]
+      }
+    ],
+    "pebble": [
+      {
+        "name": "rock_pebble_00",
+        "tris": 320,
+        "dims_m": [
+          0.14,
+          0.12,
+          0.06
+        ]
+      },
+      {
+        "name": "rock_pebble_01",
+        "tris": 320,
+        "dims_m": [
+          0.16,
+          0.11,
+          0.05
+        ]
+      },
+      {
+        "name": "rock_pebble_02",
+        "tris": 320,
+        "dims_m": [
+          0.12,
+          0.11,
+          0.05
+        ]
+      },
+      {
+        "name": "rock_pebble_03",
+        "tris": 320,
+        "dims_m": [
+          0.14,
+          0.11,
+          0.06
+        ]
+      },
+      {
+        "name": "rock_pebble_04",
+        "tris": 320,
+        "dims_m": [
+          0.13,
+          0.09,
+          0.05
+        ]
+      },
+      {
+        "name": "rock_pebble_05",
+        "tris": 320,
+        "dims_m": [
+          0.14,
+          0.09,
+          0.05
+        ]
+      }
+    ],
+    "weathered": [
+      {
+        "name": "rock_weathered_00",
+        "tris": 5120,
+        "dims_m": [
+          1.96,
+          2.12,
+          1.34
+        ]
+      },
+      {
+        "name": "rock_weathered_01",
+        "tris": 5120,
+        "dims_m": [
+          2.18,
+          2.12,
+          1.09
+        ]
+      },
+      {
+        "name": "rock_weathered_02",
+        "tris": 5120,
+        "dims_m": [
+          1.83,
+          1.76,
+          1.14
+        ]
+      },
+      {
+        "name": "rock_weathered_03",
+        "tris": 5120,
+        "dims_m": [
+          2.54,
+          1.74,
+          1.38
+        ]
+      }
+    ]
+  },
+  "timings_s": {
+    "load_fields": 0.599,
+    "assets": 0.496,
+    "asset_export": 0.2,
+    "placement": 0.276,
+    "instancers": 0.003,
+    "veg_clear": 0.079,
+    "render": 306.745,
+    "total_wall": 309.396
+  }
+}

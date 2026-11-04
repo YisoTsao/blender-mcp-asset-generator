@@ -1,0 +1,13 @@
+{
+  "fingerprint": "d65a7dc20b8b3f39",
+  "built_at": "2026-11-04 01:36:07",
+  "seconds": 310.6,
+  "args": [
+    "--veg-dir",
+    "output/phase3_vegetation",
+    "--water-dir",
+    "output/phase2_water",
+    "--out",
+    "output/phase4_rocks"
+  ]
+}

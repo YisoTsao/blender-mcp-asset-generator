@@ -1,0 +1,11 @@
+{
+  "fingerprint": "9c793be439456d2d",
+  "built_at": "2026-11-03 23:46:09",
+  "seconds": 270.2,
+  "args": [
+    "--water-dir",
+    "output/phase2_water",
+    "--out",
+    "output/phase3_vegetation"
+  ]
+}

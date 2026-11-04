@@ -1,0 +1,327 @@
+{
+  "config": {
+    "seed": 42,
+    "tree_density": 1.0,
+    "pine_per_ha": 700.0,
+    "oak_per_ha": 280.0,
+    "birch_per_ha": 170.0,
+    "dead_per_ha": 30.0,
+    "logs_per_ha": 6.0,
+    "bush_per_ha": 900.0,
+    "fern_per_m2": 0.35,
+    "grass_spacing_m": 0.55,
+    "flower_fraction": 0.025,
+    "max_tree_slope_deg": 42.0,
+    "meadow_strength": 1.0
+  },
+  "stats": {
+    "instances": {
+      "pine": 766,
+      "oak": 445,
+      "birch": 198,
+      "dead": 93,
+      "log": 150,
+      "bush": 2071,
+      "fern": 1382,
+      "grass": 211622,
+      "flowers": 10084
+    },
+    "trees_total": 1502,
+    "trees_per_ha": 60.1,
+    "asset_variants": {
+      "pine": 4,
+      "oak": 3,
+      "birch": 3,
+      "dead": 3,
+      "log": 3,
+      "bush": 3,
+      "fern": 2,
+      "grass": 3,
+      "flowers": 2
+    },
+    "asset_faces_mean": {
+      "pine": 3068,
+      "oak": 1893,
+      "birch": 631,
+      "dead": 258,
+      "log": 130,
+      "bush": 126,
+      "fern": 23,
+      "grass": 3,
+      "flowers": 3
+    },
+    "rendered_triangles_approx": 8637510,
+    "canopy_cover_pct": 11.6,
+    "checks": {
+      "min_trunk_spacing_m": 2.15,
+      "trees_on_slope_gt_max": 0,
+      "trees_in_or_at_water": 0,
+      "max_tree_slope_deg_found": 42.0
+    }
+  },
+  "assets": {
+    "pine": [
+      {
+        "name": "pine_00",
+        "faces": 3157,
+        "dims_m": [
+          10.89,
+          10.65,
+          20.37
+        ]
+      },
+      {
+        "name": "pine_01",
+        "faces": 2609,
+        "dims_m": [
+          9.77,
+          10.01,
+          16.96
+        ]
+      },
+      {
+        "name": "pine_02",
+        "faces": 3653,
+        "dims_m": [
+          11.3,
+          11.44,
+          22.12
+        ]
+      },
+      {
+        "name": "pine_03",
+        "faces": 2855,
+        "dims_m": [
+          9.77,
+          9.99,
+          18.16
+        ]
+      }
+    ],
+    "oak": [
+      {
+        "name": "oak_00",
+        "faces": 2260,
+        "dims_m": [
+          15.2,
+          18.47,
+          13.93
+        ]
+      },
+      {
+        "name": "oak_01",
+        "faces": 1437,
+        "dims_m": [
+          16.0,
+          15.2,
+          11.0
+        ]
+      },
+      {
+        "name": "oak_02",
+        "faces": 1984,
+        "dims_m": [
+          16.9,
+          18.39,
+          12.85
+        ]
+      }
+    ],
+    "birch": [
+      {
+        "name": "birch_00",
+        "faces": 890,
+        "dims_m": [
+          6.0,
+          5.34,
+          14.1
+        ]
+      },
+      {
+        "name": "birch_01",
+        "faces": 555,
+        "dims_m": [
+          5.15,
+          5.67,
+          15.03
+        ]
+      },
+      {
+        "name": "birch_02",
+        "faces": 449,
+        "dims_m": [
+          5.32,
+          4.89,
+          14.82
+        ]
+      }
+    ],
+    "dead": [
+      {
+        "name": "dead_00",
+        "faces": 258,
+        "dims_m": [
+          2.3,
+          2.78,
+          13.91
+        ]
+      },
+      {
+        "name": "dead_01",
+        "faces": 274,
+        "dims_m": [
+          2.45,
+          2.41,
+          13.34
+        ]
+      },
+      {
+        "name": "dead_02",
+        "faces": 242,
+        "dims_m": [
+          2.0,
+          2.33,
+          13.15
+        ]
+      }
+    ],
+    "log": [
+      {
+        "name": "log_00",
+        "faces": 172,
+        "dims_m": [
+          10.39,
+          2.68,
+          2.74
+        ]
+      },
+      {
+        "name": "log_01",
+        "faces": 110,
+        "dims_m": [
+          7.67,
+          0.96,
+          0.86
+        ]
+      },
+      {
+        "name": "log_02",
+        "faces": 110,
+        "dims_m": [
+          7.27,
+          0.8,
+          0.63
+        ]
+      }
+    ],
+    "bush": [
+      {
+        "name": "bush_00",
+        "faces": 133,
+        "dims_m": [
+          2.75,
+          2.27,
+          2.52
+        ]
+      },
+      {
+        "name": "bush_01",
+        "faces": 131,
+        "dims_m": [
+          1.71,
+          1.86,
+          1.69
+        ]
+      },
+      {
+        "name": "bush_02",
+        "faces": 114,
+        "dims_m": [
+          1.54,
+          1.53,
+          1.87
+        ]
+      }
+    ],
+    "fern": [
+      {
+        "name": "fern_00",
+        "faces": 26,
+        "dims_m": [
+          2.03,
+          1.71,
+          0.63
+        ]
+      },
+      {
+        "name": "fern_01",
+        "faces": 20,
+        "dims_m": [
+          1.91,
+          1.83,
+          0.69
+        ]
+      }
+    ],
+    "grass": [
+      {
+        "name": "grass_00",
+        "faces": 3,
+        "dims_m": [
+          0.56,
+          0.56,
+          0.6
+        ]
+      },
+      {
+        "name": "grass_01",
+        "faces": 3,
+        "dims_m": [
+          0.9,
+          0.65,
+          0.79
+        ]
+      },
+      {
+        "name": "grass_02",
+        "faces": 3,
+        "dims_m": [
+          0.81,
+          0.81,
+          0.78
+        ]
+      }
+    ],
+    "flowers": [
+      {
+        "name": "flowers_00",
+        "faces": 3,
+        "dims_m": [
+          0.52,
+          0.55,
+          0.51
+        ]
+      },
+      {
+        "name": "flowers_01",
+        "faces": 3,
+        "dims_m": [
+          0.48,
+          0.38,
+          0.48
+        ]
+      }
+    ]
+  },
+  "timings_s": {
+    "load_fields": 0.368,
+    "assets": 9.69,
+    "asset_export": 0.181,
+    "placement": 0.542,
+    "instancers": 0.012,
+    "ground_layers": 0.044,
+    "render": 257.323,
+    "total_wall": 269.005
+  },
+  "water_source": "../phase2_water"
+}

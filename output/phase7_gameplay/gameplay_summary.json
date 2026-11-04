@@ -1,0 +1,71 @@
+{
+  "team_spawns": {
+    "Team_A": 8,
+    "Team_B": 8
+  },
+  "ffa_spawns": 24,
+  "objectives": [
+    [
+      "A",
+      "Bridge",
+      "medium",
+      85.0
+    ],
+    [
+      "B",
+      "Farmhouse",
+      "medium",
+      47.5
+    ],
+    [
+      "C",
+      "Ruins",
+      "CQB",
+      12.5
+    ],
+    [
+      "D",
+      "Lumber_Camp",
+      "medium",
+      45.0
+    ]
+  ],
+  "pickups": {
+    "weapon": 10,
+    "ammo": 20,
+    "health": 16
+  },
+  "cover_points": 396,
+  "kill_zones": 5,
+  "navigation": {
+    "walkable_cells": 151635,
+    "components": 242,
+    "main_component_cells": 142166,
+    "islands_removed_cells": 9469,
+    "cell_m": 1.0,
+    "agent_radius_m": 0.4,
+    "max_slope_deg": 40.0,
+    "max_wade_depth_m": 0.7,
+    "navmesh_quads_2m": 32396
+  },
+  "checks": {
+    "points_off_navmesh": 0,
+    "objectives_unreachable": 0,
+    "team_spawn_pairs_with_line_of_sight": 0,
+    "navigable_area_pct": 56.6,
+    "route_run_time_s_range": [
+      23.3,
+      62.9
+    ]
+  },
+  "timings_s": {
+    "nav": 0.49,
+    "cover": 0.02,
+    "visibility": 4.77,
+    "spawns_objectives": 0.04,
+    "routes": 0.56,
+    "kill_zones": 0.01,
+    "blender": 0.29,
+    "total_wall": 7.02
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "config": {
+    "seed": 42,
+    "road_half_width_m": 2.4,
+    "trail_half_width_m": 0.75,
+    "road_max_grade": 0.12,
+    "road_blend_m": 3.5,
+    "site_min_separation_m": 70.0,
+    "hq_radius_m": 22.0,
+    "bridge_clearance_m": 1.2,
+    "trench_depth_m": 1.5,
+    "trench_half_width_m": 0.6
+  },
+  "stats": {
+    "sites": [
+      "HQ_South",
+      "HQ_North",
+      "Bridge",
+      "Farmhouse",
+      "Ruins",
+      "Lumber_Camp",
+      "Bunker",
+      "Trench"
+    ],
+    "structures": {
+      "SM_Outpost_HQ_South": 7816,
+      "SM_Outpost_HQ_North": 7816,
+      "SM_Bridge": 2472,
+      "SM_Farmhouse": 4440,
+      "SM_Chapel_Ruins": 4664,
+      "SM_Lumber_Camp": 6604,
+      "SM_Bunker": 948,
+      "SM_Trench": 8940,
+      "SM_Hedgehog_00": 36,
+      "SM_Hedgehog_01": 36,
+      "SM_Hedgehog_02": 36,
+      "SM_Hedgehog_03": 36,
+      "SM_Hedgehog_04": 36,
+      "SM_Culvert_Bridge_00": 1284
+    },
+    "structure_tris_total": 45164,
+    "road_length_m": {
+      "Road_South": 261.3,
+      "Road_North": 125.3,
+      "Road_Farmhouse": 8.6,
+      "Track_Lumber_Camp": 281.4,
+      "Trail_Ruins": 199.9,
+      "Trail_Bunker": 3.3
+    },
+    "colliders_total": 211,
+    "cover_points_total": 204,
+    "debris": {
+      "stump": 150,
+      "branch_pile": 131
+    },
+    "instances_removed": {
+      "ROCK_Scatter_boulder": 7,
+      "ROCK_Scatter_moss": 5,
+      "ROCK_Scatter_pebble": 22,
+      "ROCK_Scatter_river": 14,
+      "ROCK_Scatter_weathered": 2,
+      "VEG_Scatter_birch": 15,
+      "VEG_Scatter_bush": 195,
+      "VEG_Scatter_dead": 2,
+      "VEG_Scatter_fern": 74,
+      "VEG_Scatter_flowers": 919,
+      "VEG_Scatter_grass": 17730,
+      "VEG_Scatter_log": 34,
+      "VEG_Scatter_oak": 50,
+      "VEG_Scatter_pine": 3
+    },
+    "terrain_edit_m": {
+      "max_cut": 1.76,
+      "max_fill": 1.69,
+      "area_pct": 5.45
+    },
+    "checks": {
+      "road_max_grade_pct": {
+        "Road_South": 10.1,
+        "Road_North": 8.9,
+        "Road_Farmhouse": 0.3,
+        "Track_Lumber_Camp": 16.6,
+        "Trail_Ruins": 40.1,
+        "Trail_Bunker": 0.0
+      },
+      "stream_crossings_with_bridge": 1,
+      "road_max_cross_slope_deg": {
+        "Road_South": 12.2,
+        "Road_North": 1.2,
+        "Road_Farmhouse": 0.0,
+        "Track_Lumber_Camp": 3.6,
+        "Trail_Ruins": 10.3,
+        "Trail_Bunker": 0.0
+      },
+      "structures_in_water": 0,
+      "bridge_deck_above_water_m": 1.6,
+      "pad_flatness_max_dev_m": {
+        "HQ_South": 0.0,
+        "HQ_North": 0.0,
+        "Farmhouse": 0.0,
+        "Ruins": 0.0,
+        "Lumber_Camp": 0.0,
+        "Bunker": 0.0
+      },
+      "trees_on_roads": 0
+    }
+  },
+  "timings_s": {
+    "load": 0.579,
+    "sites": 1.345,
+    "roads": 0.578,
+    "regen_instances": 0.165,
+    "structures": 0.22,
+    "debris": 0.009,
+    "cameras": 0.236,
+    "export": 0.172,
+    "render": 369.698,
+    "total_wall": 373.701
+  },
+  "heightmap_graded": {
+    "file": "heightmap_graded_1025_16bit.png",
+    "value_0_m": -0.14135462045669556,
+    "value_65535_m": 112.06409454345703
+  }
+}

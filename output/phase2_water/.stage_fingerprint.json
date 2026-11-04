@@ -1,0 +1,11 @@
+{
+  "fingerprint": "f0225cfcb925ae88",
+  "built_at": "2026-11-03 23:41:38",
+  "seconds": 47.0,
+  "args": [
+    "--terrain-dir",
+    "output/phase1_terrain",
+    "--out",
+    "output/phase2_water"
+  ]
+}

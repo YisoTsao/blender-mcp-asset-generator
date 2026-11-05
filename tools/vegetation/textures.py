@@ -115,15 +115,19 @@ def _jit(rng, c, amt):
     return np.clip(np.asarray(c) * (1 + rng.uniform(-amt, amt, 3)), 0, 1)
 
 
-def pine_needles(path, rng, size=1024):
-    """A conifer spray: central twig, side twigs, dense needle pairs."""
+def pine_needles(path, rng, size=1024, kind="pine"):
+    """A conifer spray: central twig, side twigs, dense needle pairs.
+    spruce: shorter, denser, darker blue-green needles on more side twigs."""
     cv = Canvas(size)
     bark = (0.20, 0.13, 0.08)
-    base_col = np.array([0.09, 0.17, 0.07])
+    if kind == "spruce":
+        base_col, n_twig, density, nlen = np.array([0.05, 0.13, 0.09]), 9, 200, (0.035, 0.055)
+    else:
+        base_col, n_twig, density, nlen = np.array([0.09, 0.17, 0.07]), 7, 140, (0.07, 0.11)
     main = [np.array([0.5, 0.02]), np.array([0.52, 0.98])]
     twigs = [main]
-    for i in range(7):
-        t = 0.15 + i * 0.11
+    for i in range(n_twig):
+        t = 0.15 + i * 0.77 / n_twig
         p = main[0] + (main[1] - main[0]) * t
         side = 1 if i % 2 else -1
         ang = np.radians(90 - side * rng.uniform(35, 55))
@@ -136,24 +140,29 @@ def pine_needles(path, rng, size=1024):
         L = np.linalg.norm(d)
         ax = d / L
         nr = np.array([-ax[1], ax[0]])
-        for t in np.linspace(0.02, 1.0, int(L * 140)):
+        for t in np.linspace(0.02, 1.0, int(L * density)):
             p = p0 + d * t
             for side in (-1, 1):
                 a = np.radians(rng.uniform(40, 70))
                 dirv = ax * np.cos(a) + side * nr * np.sin(a)
-                ln = rng.uniform(0.07, 0.11) * (1 - 0.4 * t)
+                ln = rng.uniform(*nlen) * (1 - 0.4 * t)
                 cv.leaf(p, p + dirv * ln, 0.035, _jit(rng, base_col, 0.25), shape="needle", vein=0.1)
     cv.save(path)
 
 
 def broadleaf_cluster(path, rng, size=1024, kind="oak"):
-    """Leafy twig cluster: oak (lobed), birch (small serrate, pendulous), bush (dense ovate)."""
+    """Leafy twig cluster: oak (lobed), birch (small serrate, pendulous), bush (dense ovate),
+    maple (palmate: 5 lobes radiating from the petiole), alder (dark, round, serrate)."""
     cv = Canvas(size)
     bark = (0.22, 0.17, 0.11) if kind != "birch" else (0.30, 0.22, 0.16)
     if kind == "oak":
         col, n_leaf, lsize, width, lobes, serr = np.array([0.13, 0.24, 0.06]), 75, (0.12, 0.18), 0.32, 5, 0.0
     elif kind == "birch":
         col, n_leaf, lsize, width, lobes, serr = np.array([0.22, 0.33, 0.07]), 170, (0.055, 0.085), 0.38, 0, 0.12
+    elif kind == "maple":
+        col, n_leaf, lsize, width, lobes, serr = np.array([0.17, 0.27, 0.05]), 46, (0.09, 0.13), 0.3, 0, 0.08
+    elif kind == "alder":
+        col, n_leaf, lsize, width, lobes, serr = np.array([0.08, 0.17, 0.05]), 120, (0.075, 0.1), 0.5, 0, 0.1
     else:
         col, n_leaf, lsize, width, lobes, serr = np.array([0.12, 0.22, 0.06]), 150, (0.07, 0.1), 0.4, 0, 0.05
     # Twig skeleton.
@@ -178,9 +187,18 @@ def broadleaf_cluster(path, rng, size=1024, kind="oak"):
         b = p + (q - p) * rng.uniform(0.3, 1.0)
         ang = rng.uniform(0, 2 * np.pi) if kind != "birch" else np.radians(-90 + rng.uniform(-60, 60))
         ln = rng.uniform(*lsize)
-        tip = np.clip(b + ln * np.array([np.cos(ang), np.sin(ang)]), 0.02, 0.98)
         b = np.clip(b, 0.03, 0.97)
-        cv.leaf(b, tip, width, _jit(rng, col, 0.22), lobes=lobes, serr=serr, vein=0.3)
+        c = _jit(rng, col, 0.22)
+        if kind == "maple":
+            # Palmate: five pointed lobes fanning out from one point, centre lobe longest.
+            for k, spread in enumerate((-1.25, -0.6, 0.0, 0.6, 1.25)):
+                a = ang + spread
+                lk = ln * (1.0 - 0.18 * abs(k - 2))
+                tip = np.clip(b + lk * np.array([np.cos(a), np.sin(a)]), 0.02, 0.98)
+                cv.leaf(b, tip, width, c, shape="lanceolate", serr=serr, vein=0.3)
+            continue
+        tip = np.clip(b + ln * np.array([np.cos(ang), np.sin(ang)]), 0.02, 0.98)
+        cv.leaf(b, tip, width, c, lobes=lobes, serr=serr, vein=0.3)
     cv.save(path)
 
 
@@ -243,6 +261,10 @@ def generate_all(out_dir, seed=0):
         "grass": lambda p: grass_tuft(p, rng),
         "grass_flowers": lambda p: grass_tuft(p, rng, flowers=True),
         "fern": lambda p: fern_frond(p, rng),
+        # Added later: kept at the end so the shared rng leaves the older textures unchanged.
+        "spruce_needles": lambda p: pine_needles(p, rng, kind="spruce"),
+        "maple_leaves": lambda p: broadleaf_cluster(p, rng, kind="maple"),
+        "alder_leaves": lambda p: broadleaf_cluster(p, rng, kind="alder"),
     }
     paths = {}
     for name, fn in files.items():

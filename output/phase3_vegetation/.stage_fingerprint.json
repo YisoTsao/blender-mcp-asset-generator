@@ -1,7 +1,7 @@
 {
-  "fingerprint": "9c793be439456d2d",
-  "built_at": "2026-11-03 23:46:09",
-  "seconds": 270.2,
+  "fingerprint": "573cbc7658e11240",
+  "built_at": "2026-11-05 23:21:24",
+  "seconds": 21.8,
   "args": [
     "--water-dir",
     "output/phase2_water",

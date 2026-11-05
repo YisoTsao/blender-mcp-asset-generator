@@ -1,10 +1,14 @@
 """Ecological placement of vegetation (numpy only).
 
-Habitat model per species from terrain/water fields:
-  altitude band (relative height), slope (no trees on cliffs), moisture (water
-  proximity + final-terrain drainage + wet bank band), large-scale groves/clearings,
-  open valley meadows kept for gameplay sightlines.
-Trees: jittered candidates -> species by relative suitability -> Poisson rejection
+Habitat fields from terrain/water: altitude band (relative height), slope (no trees
+on cliffs), aspect (sunny / shady slopes), moisture (water proximity + final-terrain
+drainage + wet bank band), large-scale groves/clearings, open valley meadows kept
+for gameplay sightlines.
+Forest stands (zones): each cell is assigned a stand type (riparian, broadleaf,
+mixed, pine, spruce, deadwood) by habitat suitability plus low-frequency noise,
+so stands have clear but irregular borders; a narrow soft band mixes neighbours.
+Each stand has its own tree density and species mix.
+Trees: jittered candidates -> species by stand mix -> Poisson rejection
 with species trunk/crown radii (no interpenetrating trunks, no regular rows).
 Logs: lie on near-flat ground, pitched to the terrain, with a trunk-free corridor.
 Understory uses a canopy-shade map splatted from the placed trees.
@@ -25,11 +29,10 @@ from water_core import bilinear  # noqa: E402
 @dataclass
 class VegConfig:
     seed: int = 42
-    tree_density: float = 1.0          # global multiplier
-    pine_per_ha: float = 700.0
-    oak_per_ha: float = 280.0
-    birch_per_ha: float = 170.0
-    dead_per_ha: float = 30.0
+    tree_density: float = 1.0          # global multiplier on every stand's density
+    zone_noise: float = 0.5            # how much low-frequency noise breaks up stand borders
+    mountain_forest: float = 1.0       # strength of the large forests climbing some mountains (0 = off)
+    zone_softness: float = 0.02        # width of the mixed band between stands (score units)
     logs_per_ha: float = 6.0
     bush_per_ha: float = 900.0
     fern_per_m2: float = 0.35
@@ -40,8 +43,22 @@ class VegConfig:
 
 
 # Trunk spacing radius (m) and crown radius for canopy (m), per tree species.
-TREE_R = {"pine": 2.4, "oak": 4.5, "birch": 2.0, "dead": 2.2}
-CROWN_R = {"pine": 2.6, "oak": 5.5, "birch": 2.6, "dead": 0.6}
+TREE_R = {"pine": 2.4, "spruce": 2.2, "oak": 4.5, "maple": 3.8, "alder": 2.4, "birch": 2.0, "dead": 2.2}
+CROWN_R = {"pine": 2.6, "spruce": 2.4, "oak": 5.5, "maple": 4.6, "alder": 2.8, "birch": 2.6, "dead": 0.6}
+TREE_SPECIES = tuple(TREE_R)
+NEEDLE_SPECIES = ("pine", "spruce", "dead")    # litter kind under the crown
+
+# Forest stands: id (index + 1 in the zone map; 0 = water), density (trees/ha before the
+# grove/meadow/slope mask) and species mix (fractions, sum 1).
+ZONES = {
+    "riparian": {"label": "河岸林", "per_ha": 520.0, "mix": {"alder": 0.5, "birch": 0.38, "maple": 0.12}},
+    "broadleaf": {"label": "闊葉林", "per_ha": 330.0, "mix": {"oak": 0.5, "maple": 0.35, "birch": 0.15}},
+    "mixed": {"label": "混交林", "per_ha": 500.0, "mix": {"pine": 0.3, "spruce": 0.15, "oak": 0.2, "maple": 0.2, "birch": 0.15}},
+    "pine": {"label": "松林", "per_ha": 600.0, "mix": {"pine": 0.86, "birch": 0.08, "dead": 0.06}},
+    "spruce": {"label": "雲杉林", "per_ha": 650.0, "mix": {"spruce": 0.82, "pine": 0.12, "dead": 0.06}},
+    "deadwood": {"label": "枯木林", "per_ha": 240.0, "mix": {"dead": 0.7, "birch": 0.22, "pine": 0.08}},
+}
+ZONE_NAMES = tuple(ZONES)
 
 
 class Fields:
@@ -77,23 +94,65 @@ class Fields:
         self.meadow = 1 - cfg.meadow_strength * valley * smoothstep(-0.35, 0.05, meadow_n)
         self.patch = fr.fbm(self.X, self.Y - 200, 1.0 / 12.0, 3)                   # small-scale patchiness
         self.dry = ~self.near_water
+        # Aspect: +1 on south-facing slopes (Blender +Y is north, ground rises northward), -1 north-facing.
+        steep = smoothstep(4, 14, self.slope)
+        self.sunny = np.clip(gy / np.maximum(np.hypot(gx, gy), 1e-6), -1, 1) * steep
+        # Mountain forests: a few mountains (large-scale noise) are wooded far up their slopes,
+        # others stay bare rock and scree. 0..1 on the slopes of the chosen mountains.
+        mf = smoothstep(0.02, 0.16, fr.fbm(self.X + 2500, self.Y - 1800, 1.0 / 260.0, 2))
+        self.mountain = cfg.mountain_forest * mf * smoothstep(0.22, 0.42, self.rel)
+        self.zone_w = zone_weights(cfg, self, fr)
+        self.zone = np.where(self.water, 0, np.argmax(self.zone_w, 0) + 1).astype(np.uint8)
 
     def sample(self, field, x, y):
         return bilinear(field.astype(float), self.size, x, y)
 
 
-def tree_densities(cfg, F):
-    """Trees per m^2 for each species on the field grid."""
-    so = 1 - smoothstep(cfg.max_tree_slope_deg - 8, cfg.max_tree_slope_deg - 1, F.slope)
-    base = so * F.forest * F.meadow * F.dry * cfg.tree_density
-    rel, m, sl = F.rel, F.moisture, F.slope
-    d = {
-        # Treeline: thins out toward the summits (no single-file rows along ridge crests).
-        "pine": cfg.pine_per_ha / 1e4 * smoothstep(0.06, 0.28, rel) * (1 - smoothstep(0.72, 0.9, rel)) * (1 - 0.4 * m),
-        "oak": cfg.oak_per_ha / 1e4 * (1 - smoothstep(0.14, 0.32, rel)) * (1 - 0.6 * m) * (1 - smoothstep(16, 26, sl)),
-        "birch": cfg.birch_per_ha / 1e4 * (0.2 + m) * (1 - smoothstep(0.3, 0.55, rel)),
-        "dead": cfg.dead_per_ha / 1e4 * (0.3 + smoothstep(0.45, 0.8, rel) + smoothstep(26, 34, sl)) * (1 - 0.8 * smoothstep(0.85, 0.97, rel)),
+def _band(x, centre, half):
+    """1 at centre, 0 beyond centre +- half (smooth)."""
+    return 1 - smoothstep(0, half, np.abs(x - centre))
+
+
+def zone_weights(cfg, F, fr):
+    """Stand weights (zones x res x res), summing to 1 per cell.
+
+    Suitability per stand from habitat, plus independent low-frequency noise so borders
+    wander; a softmax with a small temperature keeps stands mostly pure with a narrow
+    mixed band at the border."""
+    rel, m, sl, sun = F.rel, F.moisture, F.slope, F.sunny
+    score = {
+        "riparian": smoothstep(0.15, 0.45, m) * (1 - smoothstep(0.2, 0.36, rel)) * 1.15,
+        "broadleaf": (1 - smoothstep(0.16, 0.34, rel)) * (1 - smoothstep(18, 28, sl)) * (1 - 0.5 * m),
+        "mixed": _band(rel, 0.3, 0.2) * 0.72,
+        "pine": _band(rel, 0.48, 0.28) * (0.75 + 0.35 * sun) * (1 - 0.6 * m),
+        "spruce": smoothstep(0.38, 0.62, rel) * (0.75 - 0.35 * sun) * (1 - 0.3 * smoothstep(0.85, 0.97, rel)) + 0.6 * F.mountain,
+        # Windthrow / old burn: a few irregular patches on the slopes.
+        "deadwood": smoothstep(0.1, 0.35, fr.fbm(F.X - 900, F.Y + 400, 1.0 / 120.0, 3)) * _band(rel, 0.45, 0.35) * 1.3,
     }
+    S = []
+    for i, name in enumerate(ZONE_NAMES):
+        n = fr.fbm(F.X + 1700 * (i + 1), F.Y - 900 * (i + 1), 1.0 / 90.0, 3)
+        S.append(score[name] + cfg.zone_noise * n)
+    S = np.stack(S)
+    W = np.exp((S - S.max(0, keepdims=True)) / max(cfg.zone_softness, 1e-3))
+    W /= W.sum(0, keepdims=True)
+    return W
+
+
+def tree_densities(cfg, F):
+    """Trees per m^2 for each species on the field grid (sum over stands of weight x density x mix)."""
+    lim = cfg.max_tree_slope_deg + 8 * F.mountain           # forested mountains hold trees on steeper ground
+    so = 1 - smoothstep(lim - 8, lim - 1, F.slope)
+    # Treeline: thins out toward the summits (no single-file rows along ridge crests); higher on forested mountains.
+    treeline = 1 - 0.85 * smoothstep(0.82 + 0.1 * F.mountain, 0.97 + 0.03 * F.mountain, F.rel)
+    # Forested mountains: continuous cover (no grove clearings) and denser stands.
+    forest = np.maximum(F.forest, F.mountain)
+    base = so * forest * F.meadow * F.dry * treeline * cfg.tree_density * (1 + 1.6 * F.mountain)
+    d = {sp: np.zeros_like(base) for sp in TREE_SPECIES}
+    for i, name in enumerate(ZONE_NAMES):
+        z = ZONES[name]
+        for sp, frac in z["mix"].items():
+            d[sp] += F.zone_w[i] * z["per_ha"] / 1e4 * frac
     return {k: v * base for k, v in d.items()}
 
 
@@ -138,7 +197,7 @@ def place_trees(cfg, F, rng, variants):
     cum = np.cumsum(D / tot[:, None], 1)
     sp_idx = (rng.random(len(x))[:, None] > cum).sum(1)
     # Hard constraints (density is smooth; these are not): no trees on cliffs or in/at water.
-    hard = ((F.sample(F.slope, x, y) <= cfg.max_tree_slope_deg)
+    hard = ((F.sample(F.slope, x, y) <= cfg.max_tree_slope_deg + 8 * F.sample(F.mountain, x, y))
             & (F.sample(F.near_water.astype(float), x, y) < 0.01))
     x, y, sp_idx = x[hard], y[hard], sp_idx[hard]
     order = rng.permutation(len(x))
@@ -185,6 +244,10 @@ def place_logs(cfg, F, rng, trees_hash, lengths):
         x, y = rng.uniform(-F.size / 2 + 12, F.size / 2 - 12, 2)
         if F.sample(tree_d, np.array([x]), np.array([y]))[0] < 0.006:
             continue
+        # Fallen timber concentrates in windthrow / deadwood stands.
+        dead_w = F.sample(F.zone_w[ZONE_NAMES.index("deadwood")], np.array([x]), np.array([y]))[0]
+        if rng.random() > 0.3 + 0.7 * dead_w:
+            continue
         v = int(rng.integers(len(lengths)))
         L = lengths[v]
         yaw = rng.uniform(0, 2 * np.pi)
@@ -224,7 +287,7 @@ def canopy_map(F, trees):
     res = F.H.shape[0]
     cov = {"needle": np.zeros((res, res)), "leaf": np.zeros((res, res))}
     for sp, t in trees.items():
-        kind = "needle" if sp in ("pine", "dead") else "leaf"
+        kind = "needle" if sp in NEEDLE_SPECIES else "leaf"
         for (x, y, _), s in zip(t["pos"], t["scale"]):
             R = CROWN_R[sp] * s
             c0 = int((x + F.size / 2) / F.cell)

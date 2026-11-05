@@ -162,7 +162,7 @@ def asset_table():
     for c in bpy.data.collections:
         if c.name.startswith("VEG_") and c.name not in ("VEG_Assets",):
             sp = c.name[4:]
-            kind = "tree" if sp in ("pine", "oak", "birch", "dead") else "small"
+            kind = "tree" if sp in ("pine", "spruce", "oak", "maple", "alder", "birch", "dead") else "small"
             for o in sorted(c.objects, key=lambda o: o.name):
                 table.append((o, kind, "Vegetation", [sp]))
         if c.name.startswith("ROCK_") and c.name != "ROCK_Assets":
@@ -284,7 +284,8 @@ def main():
     scene.collection.children.link(hcol)
     hl_stats = {}
     th = np.linspace(0, 2 * np.pi, 6, endpoint=False)
-    crown = {"pine": (2.4, 9.0, 8.0), "oak": (5.0, 7.0, 6.0), "birch": (2.2, 7.0, 5.0), "dead": (0.8, 6.0, 3.0)}
+    crown = {"pine": (2.4, 9.0, 8.0), "spruce": (2.3, 11.0, 9.0), "oak": (5.0, 7.0, 6.0), "maple": (4.4, 8.0, 7.0),
+             "alder": (2.6, 7.0, 6.0), "birch": (2.2, 7.0, 5.0), "dead": (0.8, 6.0, 3.0)}
     for (i, j) in cells:
         V, F = [], []
         for x, y, z, name, kind, g in all_inst:

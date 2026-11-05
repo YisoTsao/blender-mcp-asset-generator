@@ -2,10 +2,9 @@
   "config": {
     "seed": 42,
     "tree_density": 1.0,
-    "pine_per_ha": 700.0,
-    "oak_per_ha": 280.0,
-    "birch_per_ha": 170.0,
-    "dead_per_ha": 30.0,
+    "zone_noise": 0.5,
+    "mountain_forest": 1.0,
+    "zone_softness": 0.02,
     "logs_per_ha": 6.0,
     "bush_per_ha": 900.0,
     "fern_per_m2": 0.35,
@@ -16,18 +15,107 @@
   },
   "stats": {
     "instances": {
-      "pine": 766,
-      "oak": 445,
-      "birch": 198,
-      "dead": 93,
+      "pine": 479,
+      "spruce": 614,
+      "oak": 389,
+      "maple": 332,
+      "alder": 130,
+      "birch": 324,
+      "dead": 118,
       "log": 150,
-      "bush": 2071,
-      "fern": 1382,
-      "grass": 211622,
-      "flowers": 10084
+      "bush": 2319,
+      "fern": 1554,
+      "grass": 200707,
+      "flowers": 9628
     },
-    "trees_total": 1502,
-    "trees_per_ha": 60.1,
+    "trees_total": 2386,
+    "trees_per_ha": 95.4,
+    "zones": {
+      "riparian": {
+        "id": 1,
+        "label": "\u6cb3\u5cb8\u6797",
+        "area_pct": 8.0,
+        "trees": {
+          "pine": 5,
+          "spruce": 7,
+          "oak": 11,
+          "maple": 25,
+          "alder": 111,
+          "birch": 94,
+          "dead": 3
+        }
+      },
+      "broadleaf": {
+        "id": 2,
+        "label": "\u95ca\u8449\u6797",
+        "area_pct": 39.1,
+        "trees": {
+          "pine": 24,
+          "spruce": 19,
+          "oak": 311,
+          "maple": 221,
+          "alder": 9,
+          "birch": 129,
+          "dead": 1
+        }
+      },
+      "mixed": {
+        "id": 3,
+        "label": "\u6df7\u4ea4\u6797",
+        "area_pct": 21.5,
+        "trees": {
+          "pine": 125,
+          "spruce": 54,
+          "oak": 55,
+          "maple": 72,
+          "alder": 4,
+          "birch": 56,
+          "dead": 6
+        }
+      },
+      "pine": {
+        "id": 4,
+        "label": "\u677e\u6797",
+        "area_pct": 9.7,
+        "trees": {
+          "pine": 236,
+          "spruce": 16,
+          "oak": 4,
+          "maple": 5,
+          "alder": 1,
+          "birch": 32,
+          "dead": 17
+        }
+      },
+      "spruce": {
+        "id": 5,
+        "label": "\u96f2\u6749\u6797",
+        "area_pct": 13.5,
+        "trees": {
+          "pine": 79,
+          "spruce": 515,
+          "oak": 5,
+          "maple": 6,
+          "alder": 4,
+          "birch": 2,
+          "dead": 43
+        }
+      },
+      "deadwood": {
+        "id": 6,
+        "label": "\u67af\u6728\u6797",
+        "area_pct": 3.9,
+        "trees": {
+          "pine": 10,
+          "spruce": 3,
+          "oak": 3,
+          "maple": 3,
+          "alder": 1,
+          "birch": 11,
+          "dead": 48
+        }
+      }
+    },
     "asset_variants": {
       "pine": 4,
       "oak": 3,
@@ -37,7 +125,10 @@
       "bush": 3,
       "fern": 2,
       "grass": 3,
-      "flowers": 2
+      "flowers": 2,
+      "spruce": 2,
+      "maple": 2,
+      "alder": 2
     },
     "asset_faces_mean": {
       "pine": 3068,
@@ -48,15 +139,18 @@
       "bush": 126,
       "fern": 23,
       "grass": 3,
-      "flowers": 3
+      "flowers": 3,
+      "spruce": 3791,
+      "maple": 1410,
+      "alder": 364
     },
-    "rendered_triangles_approx": 8637510,
-    "canopy_cover_pct": 11.6,
+    "rendered_triangles_approx": 12524784,
+    "canopy_cover_pct": 16.5,
     "checks": {
-      "min_trunk_spacing_m": 2.15,
+      "min_trunk_spacing_m": 2.11,
       "trees_on_slope_gt_max": 0,
       "trees_in_or_at_water": 0,
-      "max_tree_slope_deg_found": 42.0
+      "max_tree_slope_deg_found": 48.1
     }
   },
   "assets": {
@@ -311,17 +405,146 @@
           0.48
         ]
       }
+    ],
+    "spruce": [
+      {
+        "name": "spruce_00",
+        "faces": 3847,
+        "dims_m": [
+          11.78,
+          12.24,
+          22.68
+        ]
+      },
+      {
+        "name": "spruce_01",
+        "faces": 3736,
+        "dims_m": [
+          11.2,
+          11.3,
+          23.17
+        ]
+      }
+    ],
+    "maple": [
+      {
+        "name": "maple_00",
+        "faces": 1445,
+        "dims_m": [
+          15.83,
+          14.16,
+          14.32
+        ]
+      },
+      {
+        "name": "maple_01",
+        "faces": 1376,
+        "dims_m": [
+          12.73,
+          13.16,
+          14.47
+        ]
+      }
+    ],
+    "alder": [
+      {
+        "name": "alder_00",
+        "faces": 375,
+        "dims_m": [
+          8.6,
+          7.73,
+          16.7
+        ]
+      },
+      {
+        "name": "alder_01",
+        "faces": 354,
+        "dims_m": [
+          7.98,
+          5.94,
+          15.13
+        ]
+      }
     ]
   },
+  "zones": {
+    "map": "forest_zones_513.png",
+    "values": {
+      "water": 0,
+      "riparian": 1,
+      "broadleaf": 2,
+      "mixed": 3,
+      "pine": 4,
+      "spruce": 5,
+      "deadwood": 6
+    },
+    "stands": {
+      "riparian": {
+        "label": "\u6cb3\u5cb8\u6797",
+        "per_ha": 520.0,
+        "mix": {
+          "alder": 0.5,
+          "birch": 0.38,
+          "maple": 0.12
+        }
+      },
+      "broadleaf": {
+        "label": "\u95ca\u8449\u6797",
+        "per_ha": 330.0,
+        "mix": {
+          "oak": 0.5,
+          "maple": 0.35,
+          "birch": 0.15
+        }
+      },
+      "mixed": {
+        "label": "\u6df7\u4ea4\u6797",
+        "per_ha": 500.0,
+        "mix": {
+          "pine": 0.3,
+          "spruce": 0.15,
+          "oak": 0.2,
+          "maple": 0.2,
+          "birch": 0.15
+        }
+      },
+      "pine": {
+        "label": "\u677e\u6797",
+        "per_ha": 600.0,
+        "mix": {
+          "pine": 0.86,
+          "birch": 0.08,
+          "dead": 0.06
+        }
+      },
+      "spruce": {
+        "label": "\u96f2\u6749\u6797",
+        "per_ha": 650.0,
+        "mix": {
+          "spruce": 0.82,
+          "pine": 0.12,
+          "dead": 0.06
+        }
+      },
+      "deadwood": {
+        "label": "\u67af\u6728\u6797",
+        "per_ha": 240.0,
+        "mix": {
+          "dead": 0.7,
+          "birch": 0.22,
+          "pine": 0.08
+        }
+      }
+    }
+  },
   "timings_s": {
-    "load_fields": 0.368,
-    "assets": 9.69,
-    "asset_export": 0.181,
-    "placement": 0.542,
-    "instancers": 0.012,
-    "ground_layers": 0.044,
-    "render": 257.323,
-    "total_wall": 269.005
+    "load_fields": 0.902,
+    "assets": 16.471,
+    "asset_export": 0.295,
+    "placement": 1.632,
+    "instancers": 0.015,
+    "ground_layers": 0.052,
+    "total_wall": 20.095
   },
   "water_source": "../phase2_water"
 }

@@ -9,6 +9,7 @@ Outputs in --out:
   vegetation_assets.glb            all plant asset variants (for engine import / replacement)
   vegetation_instances.json        trees, logs, bushes, ferns: transforms (UE units: cm, deg)
   density_<layer>_<N>.png          grass / flowers / fern / bush / canopy / litter / moss maps
+  forest_zones_<N>.png             forest stand per cell (0 = water, 1.. = PL.ZONE_NAMES order)
   textures/T_*.png                 generated foliage textures
   preview_*.png, vegetation_meta.json
 """
@@ -290,6 +291,22 @@ def main():
         dmaps[sp] = np.clip(g, 0, 1)
     for name, m in dmaps.items():
         write_gray8(os.path.join(out, f"density_{name}_{res_f}.png"), (np.clip(m, 0, 1) * 255).astype(np.uint8)[::-1])
+    write_gray8(os.path.join(out, f"forest_zones_{res_f}.png"), F.zone[::-1].copy())
+
+    # ---- stand statistics: area share and trees per species in each stand
+    zone_stats = {}
+    for i, zname in enumerate(PL.ZONE_NAMES):
+        mask = F.zone == i + 1
+        per = {}
+        for sp in PL.TREE_SPECIES:
+            if sp in groups and len(groups[sp]["pos"]):
+                p = groups[sp]["pos"]
+                z = F.zone[np.clip(((p[:, 1] + size_m / 2) / F.cell).astype(int), 0, res_f - 1),
+                           np.clip(((p[:, 0] + size_m / 2) / F.cell).astype(int), 0, res_f - 1)]
+                if (n := int((z == i + 1).sum())):
+                    per[sp] = n
+        zone_stats[zname] = {"id": i + 1, "label": PL.ZONES[zname]["label"],
+                             "area_pct": round(float(mask.mean() * 100), 1), "trees": per}
 
     # ---- cameras
     setup_render(scene, a.samples)
@@ -304,7 +321,7 @@ def main():
         loc = (x, y, z)
         return make_camera(scene, name, loc, look_at_rotation(loc, (tx, ty, tz)), lens=lens)
 
-    tree_xy = np.concatenate([groups[s]["pos"][:, :2] for s in ("pine", "oak", "birch", "dead") if s in groups])
+    tree_xy = np.concatenate([groups[s]["pos"][:, :2] for s in PL.TREE_SPECIES if s in groups])
 
     def clear_of_trunks(x, y, r=3.0):
         return np.min(np.hypot(tree_xy[:, 0] - x, tree_xy[:, 1] - y)) > r
@@ -381,7 +398,7 @@ def main():
 
     # ---- instance export (UE: cm, degrees, Z-up; yaw about Z)
     inst = {}
-    for sp in ("pine", "oak", "birch", "dead", "log", "bush", "fern"):
+    for sp in (*PL.TREE_SPECIES, "log", "bush", "fern"):
         if sp not in groups or not len(groups[sp]["pos"]):
             continue
         g = groups[sp]
@@ -394,7 +411,7 @@ def main():
 
     # ---- validation + stats
     def min_trunk_spacing():
-        pts = np.concatenate([groups[s]["pos"][:, :2] for s in ("pine", "oak", "birch", "dead") if s in groups])
+        pts = np.concatenate([groups[s]["pos"][:, :2] for s in PL.TREE_SPECIES if s in groups])
         best = np.inf
         cell = {}
         for i, (x, y) in enumerate(pts):
@@ -406,7 +423,7 @@ def main():
             cell.setdefault(k, []).append(i)
         return float(best)
 
-    tree_pts = np.concatenate([groups[s]["pos"] for s in ("pine", "oak", "birch", "dead") if s in groups])
+    tree_pts = np.concatenate([groups[s]["pos"] for s in PL.TREE_SPECIES if s in groups])
     sl_at = F.sample(F.slope, tree_pts[:, 0], tree_pts[:, 1])
     wet_at = F.sample(F.near_water.astype(float), tree_pts[:, 0], tree_pts[:, 1])
     faces = {sp: int(np.mean([x["faces"] for x in asset_info[sp]])) for sp in asset_info}
@@ -414,21 +431,24 @@ def main():
     area_ha = size_m * size_m / 1e4
     stats = {
         "instances": counts,
-        "trees_total": int(sum(counts.get(s, 0) for s in ("pine", "oak", "birch", "dead"))),
-        "trees_per_ha": round(sum(counts.get(s, 0) for s in ("pine", "oak", "birch", "dead")) / area_ha, 1),
+        "trees_total": int(sum(counts.get(s, 0) for s in PL.TREE_SPECIES)),
+        "trees_per_ha": round(sum(counts.get(s, 0) for s in PL.TREE_SPECIES) / area_ha, 1),
+        "zones": zone_stats,
         "asset_variants": {sp: len(v) for sp, v in asset_info.items()},
         "asset_faces_mean": faces,
         "rendered_triangles_approx": tris,
         "canopy_cover_pct": round(float(canopy.mean() * 100), 1),
         "checks": {
             "min_trunk_spacing_m": round(min_trunk_spacing(), 2),
-            "trees_on_slope_gt_max": int((sl_at > cfg.max_tree_slope_deg + 1).sum()),
+            "trees_on_slope_gt_max": int((sl_at > cfg.max_tree_slope_deg + 8 * cfg.mountain_forest + 1).sum()),
             "trees_in_or_at_water": int((wet_at > 0.5).sum()),
             "max_tree_slope_deg_found": round(float(sl_at.max()), 1),
         },
     }
     timings["total_wall"] = time.perf_counter() - t_all
     meta = {"config": PL.config_dict(cfg), "stats": stats, "assets": asset_info,
+            "zones": {"map": f"forest_zones_{res_f}.png", "values": {"water": 0, **{z: i + 1 for i, z in enumerate(PL.ZONE_NAMES)}},
+                      "stands": PL.ZONES},
             "timings_s": {k: round(v, 3) for k, v in timings.items()}, "water_source": os.path.relpath(wdir, out)}
     with open(os.path.join(out, "vegetation_meta.json"), "w") as f:
         json.dump(meta, f, indent=2)

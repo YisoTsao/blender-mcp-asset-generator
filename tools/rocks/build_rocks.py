@@ -35,7 +35,7 @@ from placement import Fields, VegConfig, canopy_map  # noqa: E402
 from png_io import write_gray8  # noqa: E402
 from water_core import upsample2_cubic  # noqa: E402
 
-TREES = ("pine", "oak", "birch", "dead")
+TREES = ("pine", "spruce", "oak", "maple", "alder", "birch", "dead")
 COLL = {"boulder": "boulder", "moss": "boulder", "cliff": "cliff", "mountain": "mountain",
         "weathered": "weathered", "river": "river", "pebble": "pebble"}
 

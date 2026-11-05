@@ -1,5 +1,25 @@
-"""Vegetation materials: procedural barks (UV in metres) and alpha-card foliage."""
+"""Vegetation materials: barks (UV in metres) and alpha-card foliage.
+
+Barks use CC0 photo scans from Poly Haven when the image is present in
+assets/textures/bark (see SOURCE.md there); otherwise a procedural fallback.
+Image barks store their physical tile size in the material's "uv_tile_m" property;
+MeshBuilder divides the tube UVs (metres) by it, so the texture also maps correctly
+after glTF export (no mapping node needed).
+"""
+import os
+
 import bpy
+
+BARK_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "assets", "textures", "bark")
+# kind: (image file, physical size in metres (u around the trunk, v along it), procedural fallback)
+BARK_IMAGES = {
+    "pine": ("pine_bark.jpg", (2.0, 2.0), "pine"),
+    "spruce": ("knotted_pine_bark.jpg", (1.7, 1.7), "pine"),
+    "oak": ("jolcham_oak_bark_01.jpg", (1.0, 2.0), "oak"),
+    "maple": ("trident_maple_bark.jpg", (1.8, 1.8), "oak"),
+    "alder": ("japanese_hackberry_bark.jpg", (1.9, 1.9), "dead"),
+    "dead": ("tree_bark_03.jpg", (1.0, 1.0), "dead"),
+}
 
 
 class K:
@@ -46,8 +66,27 @@ def _new(name):
     return m
 
 
-def bark(kind):
+def image_bark(kind):
+    file, tile, fallback = BARK_IMAGES[kind]
+    path = os.path.join(BARK_DIR, file)
+    if not os.path.exists(path):
+        print(f"BARK_IMAGE_MISSING {path} -> procedural {fallback}")
+        return bark(fallback, name=kind)
     m = _new(f"M_Bark_{kind}")
+    k = K(m)
+    k.bsdf.inputs["Roughness"].default_value = 0.9
+    tex = k.node("ShaderNodeTexImage")
+    tex.image = bpy.data.images.load(path, check_existing=True)
+    tex.extension = "REPEAT"
+    k.link(k.node("ShaderNodeTexCoord").outputs["UV"], tex.inputs["Vector"])
+    k.link(tex.outputs["Color"], k.bsdf.inputs["Base Color"])
+    k.bump(tex.outputs["Color"], 0.6)
+    m["uv_tile_m"] = list(tile)
+    return m
+
+
+def bark(kind, name=None):
+    m = _new(f"M_Bark_{name or kind}")
     k = K(m)
     k.bsdf.inputs["Roughness"].default_value = 0.9
     if kind == "pine":
@@ -178,9 +217,10 @@ def foliage(name, image_path, translucency=0.35, hue_var=0.06):
 
 
 def build_all(tex_paths):
-    mats = {f"bark_{b}": bark(b) for b in ("pine", "oak", "birch", "dead")}
+    mats = {f"bark_{b}": image_bark(b) for b in BARK_IMAGES}
+    mats["bark_birch"] = bark("birch")
     mats["log_moss"] = bark("log_moss")
     for name, path in tex_paths.items():
-        mats[name] = foliage(name, path, translucency=0.25 if name.startswith("pine") else 0.4,
-                             hue_var=0.03 if name.startswith("pine") else 0.06)
+        mats[name] = foliage(name, path, translucency=0.25 if name.endswith("needles") else 0.4,
+                             hue_var=0.03 if name.endswith("needles") else 0.06)
     return mats

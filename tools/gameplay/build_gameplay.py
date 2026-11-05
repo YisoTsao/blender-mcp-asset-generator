@@ -28,9 +28,9 @@ import gameplay_core as GC  # noqa: E402
 from blend_util import instancer_data, mesh_from_numpy, save, terrain_arrays, terrain_attr  # noqa: E402
 from png_io import hillshade_rgb, write_rgb8  # noqa: E402
 
-TREE_H = {"pine": 18.0, "oak": 13.0, "birch": 12.0, "dead": 10.0}
-TRUNK_R = {"pine": 0.3, "oak": 0.55, "birch": 0.22, "dead": 0.25}
-CROWN_R = {"pine": 1.6, "oak": 3.5, "birch": 1.6, "dead": 0.0}
+TREE_H = {"pine": 18.0, "spruce": 21.0, "oak": 13.0, "maple": 15.0, "alder": 12.5, "birch": 12.0, "dead": 10.0}
+TRUNK_R = {"pine": 0.3, "spruce": 0.3, "oak": 0.55, "maple": 0.42, "alder": 0.24, "birch": 0.22, "dead": 0.25}
+CROWN_R = {"pine": 1.6, "spruce": 1.6, "oak": 3.5, "maple": 3.0, "alder": 1.8, "birch": 1.6, "dead": 0.0}
 SINK = {"cliff": 0.6, "mountain": 0.35, "boulder": 0.25, "weathered": 0.42, "moss": 0.32, "river": 0.38, "pebble": 0.35}
 
 

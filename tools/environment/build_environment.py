@@ -42,7 +42,7 @@ from terrain_core import gaussian_blur, smoothstep  # noqa: E402
 from views import ViewFinder  # noqa: E402
 from water_core import project_to_polyline, upsample2_cubic  # noqa: E402
 
-TREES = ("pine", "oak", "birch", "dead")
+TREES = ("pine", "spruce", "oak", "maple", "alder", "birch", "dead")
 
 
 def parse_args():
@@ -309,7 +309,7 @@ def main():
             continue
         big = sp in TREES or sp in ("bush", "log", "cliff", "mountain", "boulder", "weathered", "moss")
         drop = lookup(trees_mask if big else hard, size_m, p[:, 0], p[:, 1])
-        if sp in ("pine", "oak", "birch"):
+        if sp in TREES and sp != "dead":
             cut = lookup(camp_mask, size_m, p[:, 0], p[:, 1]) & ~drop
             cut &= rng.random(len(p)) < 0.75
             stumps_xy += [tuple(q[:2]) for q in p[cut | drop & lookup(camp_mask, size_m, p[:, 0], p[:, 1])]]

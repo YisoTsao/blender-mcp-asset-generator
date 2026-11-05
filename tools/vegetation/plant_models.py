@@ -87,8 +87,14 @@ class MeshBuilder:
     def build(self, name, materials):
         verts = np.concatenate(self.v)
         faces = np.concatenate(self.f)
-        uvs = np.concatenate(self.uv).reshape(-1, 2)
         mats = np.concatenate(self.mat)
+        uvs = np.concatenate(self.uv).astype(float)
+        # Image barks: tube UVs are in metres; divide by the texture's physical tile size.
+        for i, m in enumerate(materials):
+            tile = m.get("uv_tile_m") if m is not None else None
+            if tile:
+                uvs[mats == i] /= np.asarray(tile, float)
+        uvs = uvs.reshape(-1, 2)
         me = bpy.data.meshes.new(name)
         me.vertices.add(len(verts))
         me.vertices.foreach_set("co", verts.astype(np.float32).ravel())
@@ -308,6 +314,121 @@ def make_dead(name, rng, mats):
     return mb.build(name, mats)
 
 
+def make_spruce(name, rng, mats):
+    """Norway-spruce-like: tall narrow cone, dense whorls, branches sweeping down then up at the tips."""
+    mb = MeshBuilder()
+    H = rng.uniform(17, 25)
+    r0 = H * rng.uniform(0.013, 0.016)
+    pts, _ = trunk(mb, H, r0, rng, flare=0.7, lean=0.01)
+    add_roots(mb, r0, rng, 5, r0 * 3.5)
+    crown0 = H * rng.uniform(0.12, 0.22)            # crown reaches low: spruce self-prunes poorly
+    width = H * rng.uniform(0.17, 0.21)              # max branch length at the crown base
+    z = crown0
+    while z < H - 0.5:
+        frac = (H - z) / (H - crown0)                # 1 at the base of the crown, 0 at the top
+        k = rng.integers(5, 8)
+        az0 = rng.uniform(0, 2 * np.pi)
+        for j in range(k):
+            az = az0 + 2 * np.pi * j / k + rng.uniform(-0.25, 0.25)
+            L = max(0.4, width * frac ** 0.9 * rng.uniform(0.85, 1.1) + 0.25)
+            p = point_on(pts, z)
+            # Lower branches droop, upper ones point up.
+            el = np.radians(rng.uniform(-22, -8) * frac + rng.uniform(15, 30) * (1 - frac))
+            bp = wobbly_path(p, dir_from(az, el), L, 4, rng, 0.04, droop=-0.05 * frac)
+            mb.tube(bp, np.linspace(0.02 + 0.035 * frac, 0.007, 4), ring=4)
+            ncard = max(2, int(L / 0.55))
+            for c in range(ncard):
+                t = 0.2 + 0.8 * c / max(ncard - 1, 1)
+                i = min(int(t * 3), 2)
+                base = bp[i] + (bp[i + 1] - bp[i]) * (t * 3 - i)
+                fwd = unit(bp[-1] - bp[0])
+                side = unit(np.cross(fwd, [0, 0, 1]))
+                sz = rng.uniform(1.3, 1.7) * (0.55 + 0.5 * min(L / 3, 1))
+                # Curtain of hanging twigs (card faces sideways, hangs below the branch).
+                mb.card(base - fwd * 0.2 + [0, 0, 0.25], unit([0, 0, -1] + fwd * 0.6 + rng.normal(0, 0.1, 3)),
+                        side, sz, sz * 1.1, uv=(0, 1, 1, 0))
+                if c % 2 == 0:
+                    mb.card(base - fwd * 0.2, fwd, side, sz * 0.9, sz)
+        z += rng.uniform(0.5, 0.68)
+    for zz in np.arange(crown0 + 0.4, H - 0.8, 0.8):
+        p = point_on(pts, zz)
+        a = rng.uniform(0, 2 * np.pi)
+        w = 0.8 + 1.6 * (H - zz) / (H - crown0)
+        for j in range(2):
+            r = np.array([np.cos(a + j * np.pi / 2), np.sin(a + j * np.pi / 2), 0])
+            mb.card(p - [0, 0, 0.6], unit([0, 0, 1] + rng.normal(0, 0.08, 3)), r, w, 1.4)
+    top = point_on(pts, H - 0.2)
+    for j in range(3):
+        a = j * np.pi / 3
+        mb.card(top - [0, 0, 0.5], [0, 0, 1], [np.cos(a), np.sin(a), 0], 0.55, 1.6)
+    return mb.build(name, mats)
+
+
+def make_maple(name, rng, mats):
+    """Maple-like: straighter, taller bole than oak, ascending limbs, broad rounded dome."""
+    mb = MeshBuilder()
+    H = rng.uniform(13, 18)
+    r0 = rng.uniform(0.28, 0.38)
+    zs = H * rng.uniform(0.32, 0.42)
+    pts, _ = trunk(mb, zs + 1.2, r0, rng, flare=0.7, lean=0.025, n=8, ring=10, top_r=r0 * 0.6)
+    add_roots(mb, r0, rng, 5, r0 * 3.5, 0.5)
+    tips = []
+    top = pts[-2]
+    nl = rng.integers(4, 6)
+    for j in range(nl):
+        az = 2 * np.pi * j / nl + rng.uniform(-0.4, 0.4)
+        el = np.radians(rng.uniform(50, 72))            # ascending (oak spreads wider)
+        _limb(mb, top, dir_from(az, el), (H - zs) * rng.uniform(0.5, 0.62), r0 * 0.5, rng, 0, tips, wob=0.09)
+    centre = np.array([0, 0, zs + (H - zs) * 0.6])
+    for p, d in tips:
+        out = unit(p - centre + rng.normal(0, 0.25, 3))
+        for c in range(4):
+            up = unit(d * 0.6 + out + rng.normal(0, 0.35, 3))
+            right = unit(np.cross(up, rng.normal(0, 1, 3)))
+            sz = rng.uniform(1.6, 2.3)
+            mb.card(p - up * sz * 0.35, up, right, sz, sz)
+    return mb.build(name, mats)
+
+
+def make_alder(name, rng, mats):
+    """Alder-like: single straight stem (sometimes two), short side branches, narrow egg-shaped crown."""
+    mb = MeshBuilder()
+    H = rng.uniform(10, 15)
+    stems = 1 if rng.random() < 0.7 else 2
+    for s in range(stems):
+        r0 = rng.uniform(0.15, 0.22) / (1 + 0.3 * (stems - 1))
+        off = rng.normal(0, 0.3, 2) if stems > 1 else np.zeros(2)
+        h = H * (rng.uniform(0.8, 0.95) if s else 1.0)
+        pts, _ = trunk(mb, h, r0, rng, flare=0.6, lean=0.03 if stems == 1 else 0.07, n=10, ring=8, top_r=0.025)
+        if s:
+            pts[:, :2] += off
+            mb.v[-1][:, :2] += off
+        crown0 = h * rng.uniform(0.3, 0.4)
+        tips = []
+        for zz in np.arange(crown0, h - 0.4, rng.uniform(0.45, 0.6)):
+            frac = (h - zz) / (h - crown0)
+            az = rng.uniform(0, 2 * np.pi)
+            p = point_on(pts, zz)
+            L = 0.8 + (h - crown0) * 0.32 * np.sin(np.pi * min(frac * 1.1, 1.0)) ** 0.8   # egg-shaped outline
+            bp = wobbly_path(p, dir_from(az, np.radians(rng.uniform(25, 45))), L, 4, rng, 0.08, droop=0.03)
+            mb.tube(bp, np.linspace(0.035, 0.008, 4), ring=4)
+            tips.append((bp, L))
+        for bp, L in tips:
+            for c in range(max(2, int(L / 0.45))):
+                t = 0.35 + 0.65 * rng.random()
+                i = min(int(t * 3), 2)
+                base = bp[i] + (bp[i + 1] - bp[i]) * (t * 3 - i)
+                up = unit(bp[-1] - bp[0] + [0, 0, 0.6] + rng.normal(0, 0.35, 3))
+                right = unit(np.cross(up, rng.normal(0, 1, 3)))
+                sz = rng.uniform(1.3, 1.8)
+                mb.card(base - up * sz * 0.35, up, right, sz, sz)
+        top = point_on(pts, h - 0.3)
+        for j in range(2):
+            a = j * np.pi / 2 + rng.uniform(0, 1)
+            mb.card(top - [0, 0, 0.8], [0, 0, 1], [np.cos(a), np.sin(a), 0], 1.4, 1.6)
+    return mb.build(name, mats)
+
+
 def make_log(name, rng, mats):
     mb = MeshBuilder()
     L = rng.uniform(6, 12)
@@ -383,4 +504,8 @@ SPECIES = {
     "fern": (make_fern, None, "fern", 2),
     "grass": (make_grass, None, "grass", 3),
     "flowers": (make_grass, None, "grass_flowers", 2),
+    # Added later: kept at the end so the shared rng leaves the older assets unchanged.
+    "spruce": (make_spruce, "bark_spruce", "spruce_needles", 2),
+    "maple": (make_maple, "bark_maple", "maple_leaves", 2),
+    "alder": (make_alder, "bark_alder", "alder_leaves", 2),
 }
